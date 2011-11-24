@@ -1,0 +1,38 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self background:0];
+}
+-(void)draw {
+[C4Transform begin];
+[C4Transform translateByX:100 andY:60];
+[C4Transform concat];
+[C4Shape noStroke];
+[C4Shape fill:0.4f];
+[C4Shape beginShape];
+[C4Shape vertexAt:NSMakePoint(60,40)];
+[C4Shape vertexAt:NSMakePoint(160,10)];
+[C4Shape vertexAt:NSMakePoint(170,150)];
+[C4Shape vertexAt:NSMakePoint(60,150)];
+[C4Shape endShape];
+[C4Shape noFill];
+[C4Shape stroke];
+[C4Shape stroke:0.8f];
+[C4Shape beginShape];
+[C4Shape vertexAt:NSMakePoint(40,60)];
+[C4Shape vertexAt:NSMakePoint(10,160)];
+[C4Shape vertexAt:NSMakePoint(150,170)];
+[C4Shape vertexAt:NSMakePoint(150,60)];
+[C4Shape endShape];
+[C4Transform end];
+}
+@end

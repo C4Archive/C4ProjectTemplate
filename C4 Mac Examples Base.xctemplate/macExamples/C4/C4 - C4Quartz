@@ -1,0 +1,27 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+#import "C4Quartz.h"
+
+C4Quartz *patch;
+
+@implementation C4Canvas
+
+-(void)setup {
+[self drawStyle:ANIMATED];
+[self windowWidth:400 andHeight:320];
+patch = [C4Quartz patchWithName:@"C4"];
+}
+
+-(void)draw {
+[self background:0];
+[patch render];
+}
+
+@end

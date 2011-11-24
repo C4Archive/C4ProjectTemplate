@@ -1,0 +1,125 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+NSPoint startingPointC, startingPoint4, startingPointSquare;
+NSInteger dx, dy;
+
+@interface C4Canvas () {}
+-(void)drawWireFrameBoxAt:(NSPoint)point;
+-(void)drawC;
+-(void)draw4;
+-(void)drawSquare;
+@end
+
+@implementation C4Canvas
+
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self drawStyle:EVENTBASED];
+dx = 40;
+dy = 40;
+}
+
+-(void)draw {
+dx=64*mousePos.x/self.canvasWidth;
+dy=64*mousePos.y/self.canvasHeight;
+
+[self background:0];
+[self drawC];
+[self draw4];
+[self drawSquare];
+}
+
+-(void)drawSquare {
+[C4Shape strokeRed:0.3f green:0.3f blue:0.3f];
+NSPoint currentPoint;
+currentPoint.x = ([self canvasWidth]-6*dx)/2+2*dx;
+currentPoint.y = ([self canvasHeight]-4*dy)/2+3*dy;
+[self drawWireFrameBoxAt:currentPoint];
+}
+
+-(void)draw4 {
+[C4Shape strokeRed:0.2f green:0.4f blue:1.0f];
+NSPoint currentPoint;
+currentPoint.x = ([self canvasWidth]-6*dx)/2+4*dx;
+currentPoint.y = ([self canvasHeight]-4*dy)/2;
+[self drawWireFrameBoxAt:currentPoint];
+currentPoint.y += dy;
+[self drawWireFrameBoxAt:currentPoint];
+currentPoint.y += dy;
+[self drawWireFrameBoxAt:currentPoint];
+currentPoint.y += dy;
+[self drawWireFrameBoxAt:currentPoint];
+currentPoint.x -= 2*dx;
+[self drawWireFrameBoxAt:currentPoint];
+currentPoint.y -= dy;
+[self drawWireFrameBoxAt:currentPoint];
+currentPoint.y -= dy;
+[self drawWireFrameBoxAt:currentPoint];
+currentPoint.x += dx;
+[self drawWireFrameBoxAt:currentPoint];
+currentPoint.x += 2*dx;
+[self drawWireFrameBoxAt:currentPoint];
+}
+
+-(void)drawC {
+[C4Shape strokeRed:1.0f green:0.2f blue:0.2f];
+NSPoint currentPoint;
+currentPoint.x = ([self canvasWidth]-6*dx)/2+2*dx;
+currentPoint.y = ([self canvasHeight]-4*dy)/2;
+[self drawWireFrameBoxAt:currentPoint];
+currentPoint.x -= dx;
+[self drawWireFrameBoxAt:currentPoint];
+currentPoint.x -= dx;
+[self drawWireFrameBoxAt:currentPoint];
+currentPoint.y += dy;
+[self drawWireFrameBoxAt:currentPoint];
+currentPoint.y += dy;
+[self drawWireFrameBoxAt:currentPoint];
+currentPoint.y += dy;
+[self drawWireFrameBoxAt:currentPoint];
+currentPoint.x += dx;
+[self drawWireFrameBoxAt:currentPoint];
+currentPoint.x += dx;
+[self drawWireFrameBoxAt:currentPoint];
+}
+
+-(void)drawWireFrameBoxAt:(NSPoint)point {
+NSPoint wireframeBoxCurrentPoint = NSZeroPoint;
+[C4Shape noFill];
+[C4Shape stroke];
+[C4Shape beginShape];
+wireframeBoxCurrentPoint.x = point.x;
+wireframeBoxCurrentPoint.y = point.y;
+[C4Shape vertexAt:wireframeBoxCurrentPoint];
+wireframeBoxCurrentPoint.x += 1*dx;
+wireframeBoxCurrentPoint.y += 0*dy;
+[C4Shape vertexAt:wireframeBoxCurrentPoint];
+wireframeBoxCurrentPoint.x += -1*dx;
+wireframeBoxCurrentPoint.y += 1*dy;
+[C4Shape vertexAt:wireframeBoxCurrentPoint];
+wireframeBoxCurrentPoint.x += 0*dx;
+wireframeBoxCurrentPoint.y += -1*dy;
+[C4Shape vertexAt:wireframeBoxCurrentPoint];
+wireframeBoxCurrentPoint.x += 1*dx;
+wireframeBoxCurrentPoint.y += 1*dy;
+[C4Shape vertexAt:wireframeBoxCurrentPoint];
+wireframeBoxCurrentPoint.x += 0*dx;
+wireframeBoxCurrentPoint.y += -1*dy;
+[C4Shape vertexAt:wireframeBoxCurrentPoint];
+wireframeBoxCurrentPoint.x += -1*dx;
+wireframeBoxCurrentPoint.y += 1*dy;
+[C4Shape vertexAt:wireframeBoxCurrentPoint];
+wireframeBoxCurrentPoint.x += 1*dx;
+wireframeBoxCurrentPoint.y += 0*dy;
+[C4Shape vertexAt:wireframeBoxCurrentPoint];
+[C4Shape endShape];
+}
+@end

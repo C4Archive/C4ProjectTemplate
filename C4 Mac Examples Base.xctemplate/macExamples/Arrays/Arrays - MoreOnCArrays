@@ -1,0 +1,103 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@implementation C4Canvas
+/*
+The C Array has a basic format where specifying the size of the array generally looks like:
+
+Class *array[numberOfElements];
+
+You can set the contents of each element in the list by:
+
+array[0] = some kind of data;
+
+You can get the contents of each element in the list like this:
+
+new data = array[0]; 
+
+You can use this structure to hold objects, as well as data types, but it is not very flexible.
+For instance, you cannot call any class functions on this list (e.g. no NSArray methods)
+And, even though the following call looks longer:
+
+new data = [anNSArray objectAtIndex:0]
+
+It is quite fast, so you should not worry about overhead / speed limitations.
+
+*/
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+}
+
+-(void)draw {
+//Create two arrays
+C4String *stringArray[5];
+NSArray *stringObjectArray;
+
+//Create some objects
+C4String *s0, *s1, *s2, *s3, *s4;
+s0 = [C4String stringWithFormat:@"string 0"];
+s1 = [C4String stringWithFormat:@"string 1"];
+s2 = [C4String stringWithFormat:@"string 2"];
+s3 = [C4String stringWithFormat:@"string 3"];
+s4 = [C4String stringWithFormat:@"string 4"];
+
+C4String *cArray = [C4String stringWithString:@"THE C ARRAY"];
+C4String *nsArray = [C4String stringWithString:@"THE NSARRAY"];
+
+[C4String fill:1.0f];
+
+//Load the arrays
+stringArray[0] = s0;
+stringArray[1] = s1;
+stringArray[2] = s2;
+stringArray[3] = s3;
+stringArray[4] = s4;
+
+stringObjectArray = [NSArray arrayWithObjects:s0,s1,s2,s3,s4,nil]; //nil indicates that the list is finished
+
+
+C4Log(@"The C Array");
+for(int i = 0; i < 5; i++) { // we need to remember how many objects are in the C Array ourselves
+C4Log(@"%@",stringArray[i]);
+}
+
+NSPoint p = NSMakePoint(20, self.canvasHeight-32);
+
+[cArray drawAtPoint:p];
+p.y -= 20;
+[s0 drawAtPoint:p];
+p.y -= 16;
+[s1 drawAtPoint:p];
+p.y -= 16;
+[s2 drawAtPoint:p];
+p.y -= 16;
+[s3 drawAtPoint:p];
+p.y -= 16;
+[s4 drawAtPoint:p];
+p.y -= 32;
+
+C4Log(@"The NSArray");
+for(int i = 0; i < [stringObjectArray count]; i++) {  //notice the COUNT method? we cannot call this on the C Array
+C4Log(@"%@",[stringObjectArray objectAtIndex:i]);
+}
+
+[nsArray drawAtPoint:p];
+p.y -= 20;
+[(C4String *)[stringObjectArray objectAtIndex:0] drawAtPoint:p];
+p.y -= 16;
+[(C4String *)[stringObjectArray objectAtIndex:1] drawAtPoint:p];
+p.y -= 16;
+[(C4String *)[stringObjectArray objectAtIndex:2] drawAtPoint:p];
+p.y -= 16;
+[(C4String *)[stringObjectArray objectAtIndex:3] drawAtPoint:p];
+p.y -= 16;
+[(C4String *)[stringObjectArray objectAtIndex:4] drawAtPoint:p];
+p.y -= 16;
+}
+@end

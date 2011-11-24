@@ -1,0 +1,71 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+NSInteger blockWidth;
+NSInteger blockHeight;
+NSInteger block;
+NSInteger stripeWidth;
+NSInteger left;
+NSInteger top;
+
+C4Image *image;
+
+@implementation C4Canvas
+
+-(void)setup {
+//Usually you should set up your canvas first
+//But, since we use the image dimensions to set the canvas size, we should create the image first...
+image = [C4Image imageName:@"C4Sky" andType:@"png"];
+
+[self windowWidth:image.imageWidth andHeight:image.imageHeight];
+[self background:1.0f];
+
+//stripe = width of 1 color
+stripeWidth = 1;
+//block = 3 * 3 colors (keeping things square)
+blockHeight = stripeWidth*3;
+blockWidth = blockHeight;
+
+[image loadPixelData];
+[C4Shape fill];
+[C4Shape noStroke];
+}
+
+-(void)draw {
+[self background:0];
+//iterate through the y coordinates of our image
+for(int y = 0; y <= self.canvasHeight; y+=blockHeight) {
+//iterate through the x coordinates of our image
+for(int x = 0; x <= self.canvasWidth; x+=blockWidth) {            
+//grab the color from our image at (x,y)
+C4Color *pixelColor = [image colorAtX:x andY:y];
+
+//create a block of colors
+[C4Shape fillRed:[[pixelColor nsColor] redComponent] green:0 blue:0];
+[C4Shape rectWithXPos:x+stripeWidth*0 
+yPos:y 
+width:stripeWidth 
+andHeight:blockHeight];
+
+[C4Shape fillRed:0 green:[[pixelColor nsColor] greenComponent] blue:0];
+[C4Shape rectWithXPos:x+stripeWidth*1 
+yPos:y 
+width:stripeWidth 
+andHeight:blockHeight];
+
+[C4Shape fillRed:0 green:0 blue:[[pixelColor nsColor] blueComponent]];
+[C4Shape rectWithXPos:x+stripeWidth*2
+yPos:y 
+width:stripeWidth 
+andHeight:blockHeight];
+}
+}
+}
+@end

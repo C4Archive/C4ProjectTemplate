@@ -1,0 +1,45 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+/*
+NOTE:	The array used in this example is called a "C array"
+It is NOT the same kind of array as an NSArray, or NSMutableArray
+You cannot call methods on a "C array"
+*/
+
+int width = 400;
+int height = 320;
+float distances[400][320];
+NSPoint center;
+float maxDistance;
+
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:width andHeight:height];
+[self background:0];
+center = NSMakePoint(width/2, height/2);
+maxDistance = [C4Vector distanceBetweenA:NSZeroPoint andB:center];
+for(int j = 0; j < width; j++){
+for(int i = 0; i < height; i++){
+float dist = [C4Vector distanceBetweenA:NSMakePoint(j,i) andB:center];
+distances[j][i] = dist/maxDistance;
+}
+}
+}
+-(void)draw {
+[self background:0];
+for(int j = 0; j < width; j+=2) {
+for(int i = 0; i < height; i+=2) {
+[C4Shape fill:distances[j][i]];
+[C4Shape pointAtX:j Y:i];
+}
+}
+}
+@end

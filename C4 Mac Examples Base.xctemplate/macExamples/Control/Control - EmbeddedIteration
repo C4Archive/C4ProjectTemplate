@@ -1,0 +1,32 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+float box_size = 16.0f;
+float box_space = 17.0f;
+int margin = 12;
+
+@implementation C4Canvas
+-(void)setup {
+[self background:0];
+[self windowWidth:400 andHeight:320];
+[C4Shape noStroke];
+[C4Shape fill];
+}
+-(void)draw {
+for(int i = margin; i <= self.canvasHeight-margin && box_size > 1; i+=box_space){
+if (box_size > 1) {
+for(int j = margin; j < self.canvasWidth-margin; j+=box_space){
+[C4Shape fill:3*self.canvasHeight/(i*box_space)];
+[C4Shape ellipseWithXPos:j yPos:i width:box_size andHeight:box_size];
+}
+}
+box_size = box_size-.6;
+}
+}
+@end

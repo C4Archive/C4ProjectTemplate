@@ -1,0 +1,91 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+@interface C4Canvas ()
+-(void)animatedLine:(int)rectHeight andXPos:(int)xPos;
+@end
+
+int maxHeight;
+int minHeight;
+int step;
+
+int rectHeight;
+int direction;
+
+int startHeight;
+int startdir;
+
+int bars;
+
+NSArray *colorArray;
+
+@implementation C4Canvas
+
+-(void)setup {
+[self drawStyle:ANIMATED];
+//Setup code goes here
+self.frameRate = 24;
+[self background:1.0f];
+[self windowWidth:400 andHeight:320];
+[C4Shape fill];
+[C4Shape fillColor:0];
+[C4Shape rectMode:CENTER];
+[C4Shape noStroke];
+
+maxHeight = self.canvasHeight/2;
+minHeight = 6;
+step = 12;
+
+startHeight = 100;
+startdir = -1;
+
+bars = self.canvasWidth/5;
+NSMutableArray *mutableColorArray = [[[NSMutableArray alloc] initWithCapacity:0] autorelease];
+for(int i = 0; i < bars; i++){
+[mutableColorArray addObject:[C4Color colorWithRed:[C4Math randomInt:75]/100.0f+0.15
+green:[C4Math randomInt:50]/100.0f+0.25
+blue:[C4Math randomInt:50]/100.0f+0.15]];
+}
+colorArray = [[NSArray alloc] initWithArray:mutableColorArray];
+}
+
+-(void)draw {
+[self background:1.0f];
+
+rectHeight = startHeight;
+direction = startdir;
+
+for(int aVariable = 5; aVariable <= self.canvasWidth; aVariable +=7) {		
+[C4Shape fillColor:[colorArray objectAtIndex:aVariable%bars]];
+rectHeight = rectHeight + direction *step ;
+
+if(rectHeight < minHeight) rectHeight = minHeight;
+if(rectHeight > maxHeight) rectHeight = maxHeight;
+
+if(rectHeight >= maxHeight || rectHeight <= minHeight){
+direction = direction * -1 ;
+}
+
+[self animatedLine:rectHeight andXPos:aVariable];
+}
+
+startHeight = startHeight + startdir * step;
+if(startHeight < minHeight) startHeight = minHeight;
+if(startHeight > maxHeight) startHeight = maxHeight;
+if(startHeight >= maxHeight || startHeight <= minHeight){
+startdir = startdir * -1 ;
+}
+}
+
+-(void)animatedLine:(int)rectHeight andXPos:(int)xPos{
+[C4Shape rectWithXPos:xPos yPos:self.canvasHeight/2 width:6 andHeight:rectHeight];
+}
+
+@end

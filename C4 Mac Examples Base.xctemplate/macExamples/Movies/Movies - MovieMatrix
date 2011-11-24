@@ -1,0 +1,83 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+NSMutableArray *movies;
+NSInteger iterations, startWidth;
+
+@implementation C4Canvas
+
+-(void)setup {
+[self drawStyle:ANIMATED];
+[self windowWidth:400 andHeight:466];
+
+movies = [[[NSMutableArray alloc] initWithCapacity:0] retain];
+
+iterations = 4;
+startWidth = 320;
+for (int i = 0; i < 4; i++) {
+[movies addObject:[C4Movie movieName:@"C4.mov"]];
+[movies addObject:[C4Movie movieName:@"C4.mov"]];
+}
+
+[[movies objectAtIndex:0] setX:0 
+andY:self.canvasHeight-256 
+withWidth:320 
+andHeight:256];
+
+[[movies objectAtIndex:1] setX:320 
+andY:self.canvasHeight-256 
+withWidth:self.canvasWidth-320 
+andHeight:256];
+
+[[movies objectAtIndex:2] setX:0 
+andY:self.canvasHeight-256-120 
+withWidth:160 
+andHeight:120];
+
+[[movies objectAtIndex:3] setX:160 
+andY:self.canvasHeight-256-120 
+withWidth:self.canvasWidth-160
+andHeight:120];
+
+[[movies objectAtIndex:4] setX:0 
+andY:self.canvasHeight-256-120-60 
+withWidth:80 
+andHeight:60];
+
+[[movies objectAtIndex:5] setX:80 
+andY:self.canvasHeight-256-120-60 
+withWidth:self.canvasWidth-80 
+andHeight:60];
+
+[[movies objectAtIndex:6] setX:0 
+andY:self.canvasHeight-256-120-60-30
+withWidth:40 
+andHeight:30];
+
+[[movies objectAtIndex:7] setX:40
+andY:self.canvasHeight-256-120-60-30 
+withWidth:self.canvasWidth-40 
+andHeight:30];
+
+for(int i = 0; i < [movies count]; i++) {
+[(C4Movie*)[movies objectAtIndex:i] goToTime:0.5*([movies count]-1-i)];
+}
+
+for(C4Movie *m in movies) {
+[m setLoops:YES];
+[m play];
+}
+}
+
+-(void)draw {
+[self background:1];
+}
+
+@end

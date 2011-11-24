@@ -1,0 +1,57 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+int totalPixels = 400;
+int xvals[400];
+int yvals[400];
+int bvals[400];
+int arrayIndex = 0;
+
+@implementation C4Canvas
+-(void)setup {
+[self drawStyle:ANIMATED];
+[self windowWidth:totalPixels andHeight:320];
+[C4Shape strokeWidth:1];
+[C4Shape noStroke];
+[C4Shape stroke:1.0f];
+}
+-(void)draw {
+[self background:0.5f];
+for(int i = 1; i < self.canvasWidth; i++) {
+xvals[i-1] = xvals[i];
+yvals[i-1] = yvals[i];
+bvals[i-1] = bvals[i];
+}
+
+xvals[totalPixels-1] = mousePos.x;
+yvals[totalPixels-1] = mousePos.y;
+if (mouseIsPressed) {
+bvals[totalPixels-1] = self.canvasHeight*.98;
+} else {
+bvals[totalPixels-1] = 0;
+}
+
+[C4Shape noStroke];
+[C4Shape fill:1.0f];
+[C4Shape rectWithXPos:0 
+yPos:self.canvasHeight/3 
+width:self.canvasWidth 
+andHeight:self.canvasHeight/3+1];
+
+for(int i = 1; i < totalPixels; i++) {
+[C4Shape fill:1.0f];
+[C4Shape pointAtX:i Y:xvals[i]/3+2*self.canvasHeight/3];
+[C4Shape fill:0];
+[C4Shape pointAtX:i Y:yvals[i]/3+self.canvasHeight/3];
+[C4Shape stroke];
+[C4Shape lineFromX:i-1 Y:bvals[i-1]/3 toX:i Y:bvals[i]/3];
+}
+}
+@end

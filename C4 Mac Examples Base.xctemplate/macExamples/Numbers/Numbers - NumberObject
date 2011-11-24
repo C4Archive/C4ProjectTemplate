@@ -1,0 +1,61 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@implementation C4Canvas
+-(void)setup {
+/*
+This example shows the flexibility of the number object
+You can input any kind of number into it with the appropriate method
+You can request a variety of different data types from it too
+*/
+
+/*
+This example is important, because it allows you to store numbers in objects
+This will allow you to pass them through a variety of methods
+But! Most importantly, you will be able to use them in Arrays
+*/
+
+NSNumber *n = [NSNumber numberWithFloat:102.0123456789];
+
+C4Log(@"--- Accessing Different Datatypes from a Number Object ---");
+C4Log(@"      object %@",n);					//actually calls the description method for the object
+C4Log(@"         int %d",[n intValue]);
+C4Log(@"       float %f",[n floatValue]);
+C4Log(@"      double %f",[n doubleValue]);		//doubles and floats are treated the same
+C4Log(@"format float %4.2f",[n floatValue]);	//formats 2 numbers after the point 
+C4Log(@"format float %4.20f",[n floatValue]);	//20 numbers after the point (not precise though)
+C4Log(@"     boolean %d",[n boolValue]);		//the number object returns a 1 (YES) for any non-zero number
+C4Log(@"        char %c",[n charValue]);		//prints f, because 102.1 is converted to a whole number 102 and then mapped to a character
+C4Log(@"");
+
+C4Log(@"--- Comparing Output With A Regular number ---");
+C4Log(@"         int %d",102.1);		//prints 0, because 102.1 is not a whole number
+C4Log(@"       float %f",102.1);	
+C4Log(@"      double %f",102.1);
+C4Log(@"format float %4.2f",102.1);
+C4Log(@"format float %4.20f",102.1);	
+C4Log(@"     boolean %d",102.1);		//prints 0, because anything that isn't 1 is false
+C4Log(@"        char %c",102.1);		//prints nothing, %c understands only whole numbers	
+
+C4Log(@"--- Creating A Number From Different Datatypes ---");
+n = [NSNumber numberWithBool:YES];
+C4Log(@"         object %@",n);
+n = [NSNumber numberWithBool:NO];
+C4Log(@"         object %@",n);
+n = [NSNumber numberWithChar:'c'];
+C4Log(@"         object %@",n);
+n = [NSNumber numberWithDouble:2.0123456789];
+C4Log(@"         object %@",n);
+n = [NSNumber numberWithFloat:2390.0123456789];	//numbers will be formatted a little bit
+C4Log(@"         object %@",n);
+n = [NSNumber numberWithInt:1];
+C4Log(@"         object %@",n);
+}
+
+@end

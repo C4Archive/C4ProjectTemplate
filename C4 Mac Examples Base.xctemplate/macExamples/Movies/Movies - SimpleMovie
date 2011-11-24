@@ -1,0 +1,25 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+C4Movie *smallMovie;
+
+@implementation C4Canvas
+
+-(void)setup {
+[self drawStyle:ANIMATED];
+[self windowWidth:400 andHeight:320];
+smallMovie = [C4Movie movieName:@"C4.mov"];
+[smallMovie play];
+[smallMovie setLoops:YES];
+[smallMovie setX:self.centerPos.x-100];
+[smallMovie setY:self.centerPos.y-80];
+}
+
+@end

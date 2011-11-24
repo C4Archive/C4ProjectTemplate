@@ -1,0 +1,68 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@interface C4Canvas (private)
+-(void)setNewFramerate;
+@end
+
+NSInteger y;
+C4String *message;
+
+@implementation C4Canvas
+
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+
+[C4String fill:1.0f];
+message = [[C4String stringWithString:@"The default draw style is EVENTBASED"] retain];
+
+[C4Shape strokeRed:1.0f green:0.2f blue:0.2f];
+y = self.centerPos.y;
+}
+
+-(void)draw {
+[self background:0.0f];
+y++;
+if (y > self.canvasHeight) y = 0;
+[C4Shape lineFromX:0 Y:y toX:self.canvasWidth Y:y];	
+
+[message drawAtPoint:NSMakePoint(20, self.centerPos.y)];
+}
+
+-(void)keyPressed {
+switch (keyChar) {
+case RETURN :
+[self setNewFramerate];
+break;
+default:
+break;
+}
+}
+
+-(void)mousePressed {
+message = [[C4String stringWithFormat:
+@"The current drawStyle is: ANIMATED\nThe target frameRate is: %4.2f",
+self.frameRate] retain];
+[self drawStyle:ANIMATED];
+}
+
+-(void)mouseReleased {
+message = [[C4String stringWithString:@"The current drawStyle is: EVENTBASED"] retain];
+[self drawStyle:EVENTBASED];
+}
+
+-(void)setNewFramerate {
+int newFramerate = [C4Math randomIntBetweenA:1 andB:60];
+[self setFrameRate:newFramerate];
+message = [[C4String stringWithFormat:
+@"The current drawStyle is: ANIMATED\nThe target frameRate is: %4.2f",
+self.frameRate] retain];
+}
+
+@end

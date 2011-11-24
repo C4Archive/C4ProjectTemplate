@@ -1,0 +1,37 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+float increment, zincrement, zOff;
+
+@implementation C4Canvas
+-(void)setup {
+[self drawStyle:DISPLAYRATE];
+[self windowWidth:400 andHeight:320];
+zOff = 0.0f;
+zincrement = 0.02f;
+increment = 0.02f;
+}
+
+-(void)draw {
+[self background:0];
+float xOff = 0.0f;
+for(int x = 0; x < self.canvasWidth; x+=2) {
+xOff += increment;
+float yOff = 0.0f;
+for(int y = 0; y < self.canvasHeight; y+=2) {
+yOff += increment;
+float bright = [C4Noise noiseX:xOff Y:yOff Z:zOff]+0.2;
+[C4Shape fill:bright];
+[C4Shape pointAtX:x Y:y];
+}
+}
+zOff += zincrement; // Increment zoff
+}
+@end

@@ -1,0 +1,41 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@implementation C4Canvas
+
+C4String *message, *drawcount;
+
+NSInteger drawCount = 0;
+
+CGFloat y;
+
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self drawStyle:ANIMATED];
+[C4String fill:1.0f];
+message = [[C4String stringWithString:
+@"When the draw style is ANIMATED the sketch will fire automatically"] 
+retain];
+[C4Shape strokeRed:1.0f green:0.2f blue:0.2f];
+y = self.centerPos.y;
+
+}
+
+-(void)draw {
+[self background:0];
+
+y++;
+if(y > self.canvasHeight) y = 0;
+[C4Shape lineFromX:0 Y:y toX:self.canvasWidth Y:y];
+
+[message drawInRect:NSMakeRect(20, self.centerPos.y, 360, 40)];
+drawcount = [C4String stringWithFormat:@"drawCount = %d ",drawCount++];
+[drawcount drawAtPoint:NSMakePoint(20, 146)];
+}
+@end

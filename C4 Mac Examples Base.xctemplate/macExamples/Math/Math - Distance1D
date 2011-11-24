@@ -1,0 +1,53 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+int thin = 8;
+int thick = 36;
+float x1 = 134.0f;
+float x2 = 44.0f;
+float x3 = 58.0f;
+float x4 = 120.0f;
+
+@implementation C4Canvas 
+-(void)setup {
+[self drawStyle:DISPLAYRATE];
+[self windowWidth:400 andHeight:320];
+[C4Shape noStroke];
+}
+
+-(void)draw {
+[self background:0];
+
+float mx = mousePos.x * 0.4 - self.canvasWidth/5;
+
+[C4Shape fill:0.4f];
+[C4Shape rectWithXPos:x2 yPos:0 width:thick andHeight:self.canvasHeight/2];
+[C4Shape fill:0.8f];
+[C4Shape rectWithXPos:x1 yPos:0 width:thick andHeight:self.canvasHeight/2];
+[C4Shape fill:0.4f];
+[C4Shape rectWithXPos:x4 yPos:self.canvasHeight/2 width:thin andHeight:self.canvasHeight/2];
+[C4Shape fill:0.8f];
+[C4Shape rectWithXPos:x3 yPos:self.canvasHeight/2 width:thick andHeight:self.canvasHeight/2];
+
+x1 += mx/16;
+x2 += mx/64;
+x3 -= mx/16;
+x4 -= mx/64;
+
+if(x1 < -thick) x1 = self.canvasWidth;
+if(x1 > self.canvasWidth) x1 = -thick;
+if(x2 < -thin) x2 = self.canvasWidth;
+if(x2 > self.canvasWidth) x2 = -thin;
+if(x3 < -thick) x3 = self.canvasWidth;
+if(x3 > self.canvasWidth) x3 = -thick;
+if(x4 < -thin) x4 = self.canvasWidth;
+if(x4 > self.canvasWidth) x4 = -thin;
+}
+@end

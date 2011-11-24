@@ -1,0 +1,34 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+C4Image *C4;
+CGFloat theta;
+
+@implementation C4Canvas
+
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self drawStyle:DISPLAYRATE];
+C4 = [[C4Image imageName:@"C4Red.png"] retain];
+C4.imageMode = CENTER;
+theta = 0.0f;
+}
+
+-(void)draw {
+[self background:0 alpha:0.02f];
+[C4Transform begin];
+[C4Transform translateBy:self.centerPos];
+[C4Transform rotateByAngle:theta];
+[C4Transform concat];
+[C4 drawAt:NSZeroPoint];
+[C4Transform end];
+theta += PI/180.0f;
+}
+@end

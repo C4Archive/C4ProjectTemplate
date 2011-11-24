@@ -1,0 +1,52 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+float a, b;
+float colorIncrement;
+BOOL direction;
+
+@implementation C4Canvas 
+
+-(void)setup {
+[self drawStyle:DISPLAYRATE];
+[self windowWidth:400 andHeight:320];
+a = 0;
+b = self.canvasWidth;
+colorIncrement = 1.0f/(float)self.canvasWidth;
+direction = YES;
+}
+
+-(void)draw {
+a++;
+if(a > self.canvasWidth){
+a = 0;
+direction = !direction;
+}
+
+if(direction){
+[C4Shape stroke:a*colorIncrement];
+} else {
+[C4Shape stroke:1.0f-a*colorIncrement];
+}
+[C4Shape lineFromX:a Y:0 toX:a Y:self.canvasHeight/2];
+
+b--;
+if (b < 0) {
+b = self.canvasWidth;
+}
+if (direction) {
+[C4Shape stroke:1.0f-b*colorIncrement];
+} else {
+[C4Shape stroke:b*colorIncrement];
+}
+[C4Shape lineFromX:b Y:self.canvasHeight/2+1 toX:b Y:self.canvasHeight];
+}
+
+@end

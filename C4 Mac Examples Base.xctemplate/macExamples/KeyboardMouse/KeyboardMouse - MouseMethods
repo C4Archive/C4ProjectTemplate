@@ -1,0 +1,82 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+float bx;
+float by;
+int bs = 30;
+BOOL bover = NO;
+BOOL locked = NO;
+float bdifx = 0.0f;
+float bdify = 0.0f;
+C4String *state;
+
+@implementation C4Canvas
+-(void)setup {
+[self drawStyle:EVENTBASED];
+[self windowWidth:400 andHeight:320];
+[self background:0];
+[C4Shape noStroke];
+bx = self.canvasWidth/2-bs/2;
+by = self.canvasHeight/2-bs/2;
+[C4Shape strokeWidth:2];
+
+[C4String fill:1.0f];
+state = [[C4String stringWithString:@"-"] retain];
+}
+
+-(void)draw {
+[self background:0];
+
+if (mousePos.x > bx && 
+mousePos.x < bx + bs 
+&& mousePos.y > by && 
+mousePos.y < by+bs) {
+
+bover = YES;
+if (!locked) {
+[C4Shape stroke:255];
+[C4Shape fillRed:1.0f green:0.2f blue:0.2f];
+state = [[C4String stringWithString:@"hovering"] retain];
+}
+} else {
+[C4Shape stroke:0.6f];
+[C4Shape fillRed:0.3f green:0.3f blue:0.3f];
+state = [[C4String stringWithString:@"-"] retain];
+bover = NO;
+}
+
+[C4Shape rectWithXPos:bx yPos:by width:bs andHeight:bs];
+[(C4String *)state drawAtPoint:NSMakePoint(10, 10)];
+}
+
+-(void)mousePressed {
+if(bover) {
+locked = YES;
+[C4Shape fillRed:0.2f green:0.4f blue:1.0f];
+state = [[C4String stringWithString:@"pressed"] retain];
+} else {
+locked = NO;
+}
+bdifx = mousePos.x-bx;
+bdify = mousePos.y-by;
+}
+
+-(void)mouseDragged {
+if(locked) {
+state = [[C4String stringWithString:@"dragging"] retain];
+bx = mousePos.x - bdifx;
+by = mousePos.y - bdify;
+}
+}
+
+-(void)mouseReleased {
+locked = NO;
+}
+@end

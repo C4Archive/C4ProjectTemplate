@@ -1,0 +1,67 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+CGFloat radius;
+
+@implementation C4Canvas
+-(void)setup {
+[self drawStyle:DISPLAYRATE];
+[self windowWidth:400 andHeight:320];
+[C4Shape stroke:1.0f];
+radius = [C4Math minOfA:self.canvasWidth andB:self.canvasHeight]/2*0.9;
+[C4Shape fill:0.33f];
+}
+-(void)draw {
+[self background:0];
+float s = -1*[C4Math map:[C4DateTime second] 
+fromMin:0 
+max:60 
+toMin:0 
+max:TWO_PI]-3*HALF_PI;
+
+float m = -1*[C4Math map:[C4DateTime minute] 
+fromMin:0 
+max:60 
+toMin:0 
+max:TWO_PI]-3*HALF_PI;
+
+float h = -1*[C4Math map:[C4DateTime hour] 
+fromMin:0 
+max:24 
+toMin:0 
+max:TWO_PI*2]-3*HALF_PI;
+
+[C4Shape stroke];
+[C4Shape strokeRed:0.3f green:0.3f blue:0.3f];
+[C4Shape lineFromX:self.centerPos.x 
+Y:self.centerPos.y 
+toX:[C4Math cos:s]*(radius*0.9)+self.canvasWidth/2 
+Y:[C4Math sin:s]*(radius*0.9)+self.canvasHeight/2];
+
+[C4Shape strokeRed:0.20f green:0.4f blue:1.0f];
+[C4Shape lineFromX:self.centerPos.x 
+Y:self.centerPos.y 
+toX:[C4Math cos:m]*(radius*0.75)+self.canvasWidth/2 
+Y:[C4Math sin:m]*(radius*0.75)+self.canvasHeight/2];
+
+[C4Shape strokeRed:1.0f green:0.2f blue:0.2f];
+[C4Shape lineFromX:self.centerPos.x 
+Y:self.centerPos.y 
+toX:[C4Math cos:h]*(radius*0.6)+self.canvasWidth/2 
+Y:[C4Math sin:h]*(radius*0.6)+self.canvasHeight/2];
+
+[C4Shape fill:1.0f];
+for (int a = 0; a < 360; a+=6) {
+float x = self.centerPos.x + [C4Math cos:[C4Math radians:a]] * (radius*0.95) ;
+float y = self.centerPos.y + [C4Math sin:[C4Math radians:a]] * (radius*0.95);
+[C4Shape pointAt:NSMakePoint(x, y)];
+}
+}
+@end

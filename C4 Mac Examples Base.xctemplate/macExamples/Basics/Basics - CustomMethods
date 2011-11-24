@@ -1,0 +1,38 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@interface C4Canvas () {}
+-(void)drawTargetAtX:(float)x Y:(float)y withSize:(float)size andNumber:(float)num;
+@end
+
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self background:51];
+[C4Shape noStroke];
+}
+
+-(void)draw {
+[self drawTargetAtX:252 Y:220 withSize:100 andNumber:3];
+[self drawTargetAtX:200 Y:134 withSize:200 andNumber:10];
+[self drawTargetAtX:80 Y:244 withSize:80 andNumber:5];
+}
+
+-(void)drawTargetAtX:(float)x Y:(float)y withSize:(float)size andNumber:(float)num {
+float greyValues = 1.0f/num;
+float steps = size/num;
+for(int i = 0; i < num; i ++){
+[C4Shape fill:i*greyValues];
+[C4Shape ellipseWithXPos:x 
+yPos:y 
+width:size-i*steps 
+andHeight:size-i*steps];
+}
+}
+@end

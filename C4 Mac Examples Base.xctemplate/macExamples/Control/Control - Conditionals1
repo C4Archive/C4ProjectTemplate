@@ -1,0 +1,27 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+}
+
+-(void)draw {
+for(int i = 10; i < self.canvasWidth; i+=10) {
+if (i%20 == 0) {
+[C4Shape stroke:0.6f];
+[C4Shape lineFromX:i Y:40 toX:i Y:self.canvasHeight/2];
+}
+else {
+[C4Shape stroke:0.4f];
+[C4Shape lineFromX:i Y:20 toX:i Y:self.canvasHeight-20];
+}
+}
+}
+@end

@@ -1,0 +1,78 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+@implementation C4Canvas
+
+NSMutableArray *voices;
+NSMutableArray *thingsToSay;
+
+-(void)setup {
+[self drawStyle:DISPLAYRATE];
+voices = [[[NSMutableArray alloc] initWithCapacity:0] retain];
+[voices addObject:[[C4Voice alloc] initWithVoice:AGNES]];
+[voices addObject:[[C4Voice alloc] initWithVoice:ALBERT]];
+[voices addObject:[[C4Voice alloc] initWithVoice:BADNEWS]];
+[voices addObject:[[C4Voice alloc] initWithVoice:BAHH]];
+[voices addObject:[[C4Voice alloc] initWithVoice:BELLS]];
+[voices addObject:[[C4Voice alloc] initWithVoice:BOING]];
+[voices addObject:[[C4Voice alloc] initWithVoice:BRUCE]];
+[voices addObject:[[C4Voice alloc] initWithVoice:BUBBLES]];
+[voices addObject:[[C4Voice alloc] initWithVoice:CELLOS]];
+[voices addObject:[[C4Voice alloc] initWithVoice:FRED]];
+[voices addObject:[[C4Voice alloc] initWithVoice:GOODNEWS]];
+[voices addObject:[[C4Voice alloc] initWithVoice:HYSTERICAL]];
+[voices addObject:[[C4Voice alloc] initWithVoice:JUNIOR]];
+[voices addObject:[[C4Voice alloc] initWithVoice:KATHY]];
+[voices addObject:[[C4Voice alloc] initWithVoice:ORGAN]];
+[voices addObject:[[C4Voice alloc] initWithVoice:PRINCESS]];
+[voices addObject:[[C4Voice alloc] initWithVoice:RALPH]];
+[voices addObject:[[C4Voice alloc] initWithVoice:TRINOIDS]];
+[voices addObject:[[C4Voice alloc] initWithVoice:VICKI]];
+[voices addObject:[[C4Voice alloc] initWithVoice:VICTORIA]];
+[voices addObject:[[C4Voice alloc] initWithVoice:WHISPER]];
+[voices addObject:[[C4Voice alloc] initWithVoice:ZARVOX]];
+
+thingsToSay = [[[NSMutableArray alloc] initWithCapacity:0] retain];
+[thingsToSay addObject:@"To be thus is nothing"];
+[thingsToSay addObject:@"But to be safely thus. Our fears in Banquo"];
+[thingsToSay addObject:@"Stick deep; and in his royalty of nature"];
+[thingsToSay addObject:@"Reigns that which would be fear'd: 'tis much he dares"];
+[thingsToSay addObject:@"And, to that dauntless temper of his mind"];
+[thingsToSay addObject:@"He hath a wisdom that doth guide his valour"];
+[thingsToSay addObject:@"To act in safety. There is none but he"];
+[thingsToSay addObject:@"Whose being I do fear: and, under him"];
+[thingsToSay addObject:@"My Genius is rebuk'd; as, it is said"];
+[thingsToSay addObject:@"Mark Antony's was by Caesar. He chid the sisters"];
+[thingsToSay addObject:@"When first they put the name of king upon me"];
+[thingsToSay addObject:@"And bade them speak to him: then prophet-like"];
+[thingsToSay addObject:@"They hail'd him father to a line of kings"];
+[thingsToSay addObject:@"Upon my head they plac'd a fruitless crown"];
+[thingsToSay addObject:@"And put a barren sceptre in my gripe"];
+[thingsToSay addObject:@"Thence to be wrench'd with an unlineal hand"];
+[thingsToSay addObject:@"No son of mine succeeding. If 't be so"];
+[thingsToSay addObject:@"For Banquo's issue have I fil'd my mind"];
+[thingsToSay addObject:@"For them the gracious Duncan have I murder'd"];
+[thingsToSay addObject:@"Put rancours in the vessel of my peace"];
+[thingsToSay addObject:@"Only for them; and mine eternal jewel"];
+[thingsToSay addObject:@"Given to the common enemy of man"];
+[thingsToSay addObject:@"To make them kings, the seeds of Banquo kings"];
+[thingsToSay addObject:@"Rather than so, come fate into the list"];
+[thingsToSay addObject:@"And champion me to the utterance"];
+}
+
+
+
+-(void)draw {
+for(C4Voice *v in voices) {
+NSInteger randomInteger = [C4Math randomInt:[thingsToSay count]];
+if(![v isSpeaking]) [v speak:[thingsToSay objectAtIndex:randomInteger]];
+}
+}
+@end

@@ -1,0 +1,1335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Definitions</key>
+	<dict>
+		<key>Advanced - EveryLetterEveryFont</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Advanced/Advanced -EveryLetterEveryFont</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Advanced - Kandinskyish</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Advanced/Advanced -Kandinskyish</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Advanced - Oscillator</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Advanced/Advanced -Oscillator</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Advanced - SketchPad</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Advanced/Advanced -SketchPad</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Advanced - StoringInputAdvanced</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Advanced/Advanced -StoringInputAdvanced</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Arrays - Array1D</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Arrays/Arrays - Array1D</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Arrays - Array2D</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Arrays/Arrays - Array2D</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Arrays - MoreOnCArrays</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Arrays/Arrays - MoreOnCArrays</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Arrays - MutableArrays</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Arrays/Arrays - MutableArrays</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Arrays - ObjectArray1D</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Arrays/Arrays - ObjectArray1D</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Arrays - ObjectArray2D</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Arrays/Arrays - ObjectArray2D</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Arrays - ObjectArrays</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Arrays/Arrays - ObjectArrays</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Basics - Animated</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Basics/Basics - Animated</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Basics - Coordinates</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Basics/Basics - Coordinates</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Basics - CustomMethods</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Basics/Basics - CustomMethods</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Basics - DisplayRate</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Basics/Basics - DisplayRate</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Basics - EventBased</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Basics/Basics - EventBased</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Basics - Framerate</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Basics/Basics - Framerate</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Basics - LogMessages</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Basics/Basics - LogMessages</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Basics - RecursiveCircle</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Basics/Basics - RecursiveCircle</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Basics - RecursiveCircleRandom</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Basics/Basics - RecursiveCircleRandom</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Basics - Redraw</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Basics/Basics - Redraw</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Basics - SingleFrame</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Basics/Basics - SingleFrame</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Basics - SwitchingDrawStyles</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Basics/Basics - SwitchingDrawStyles</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Basics - WidthAndHeight</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Basics/Basics - WidthAndHeight</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>C4 - C4Animated1</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/C4/C4 - C4Animated1</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>C4 - C4Animated2</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/C4/C4 - C4Animated2</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>C4 - C4FadingImages</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/C4/C4 - C4FadingImages</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>C4 - C4ForLoops</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/C4/C4 - C4ForLoops</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>C4 - C4GL</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/C4/C4 - C4GL</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>C4 - C4GradientShapes</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/C4/C4 - C4GradientShapes</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>C4 - C4LoopingImages</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/C4/C4 - C4LoopingImages</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>C4 - C4Methods</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/C4/C4 - C4Methods</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>C4 - C4Particles</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/C4/C4 - C4Particles</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>C4 - C4Points</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/C4/C4 - C4Points</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>C4 - C4Quartz</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/C4/C4 - C4Quartz</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>C4 - C4RandomLines</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/C4/C4 - C4RandomLines</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>C4 - C4Shapes</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/C4/C4 - C4Shapes</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>C4 - C4Wireframe</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/C4/C4 - C4Wireframe</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Color - ColorAndTransparency</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Color/Color - ColorAndTransparency</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Color - ColorRelativity</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Color/Color - ColorRelativity</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Color - ColorWheel</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Color/Color - ColorWheel</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Color - Gradients</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Color/Color - Gradients</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Color - GradientsAnimated</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Color/Color - GradientsAnimated</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Control - Conditionals1</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Control/Control - Conditionals1</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Control - Conditionals2</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Control/Control - Conditionals2</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Control - EmbeddedIteration</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Control/Control - EmbeddedIteration</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Control - IterationForLoops</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Control/Control - IterationForLoops</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Control - LogicalOperators</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Control/Control - LogicalOperators</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Data - DatatypeConversion</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Data/Data - DatatypeConversion</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Data - IntegersAndFloats</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Data/Data - IntegersAndFloats</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Data - TrueFalse</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Data/Data - TrueFalse</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Data - VariableMath</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Data/Data - VariableMath</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Data - VariableScope</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Data/Data - VariableScope</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Data - VariablesWithAnimatedEllipses</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Data/Data - VariablesWithAnimatedEllipses</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>DateTime - Clock</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/DateTime/DateTimeClock</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>DateTime - CurrentDateTime</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/DateTime/DateTimeCurrentDateTime</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>DateTime - MillisPatterns</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/DateTime/DateTimeMillisPatterns</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Fonts - BasicFont</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Fonts/Fonts - BasicFont</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Fonts - RandomFont</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Fonts/Fonts - RandomFont</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Fonts - YourFonts</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Fonts/Fonts - YourFonts</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Image - BackgroundImage</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Image/Image - BackgroundImage</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Image - CombinedFilters</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Image/Image - CombinedFilters</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Image - CreateDraw</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Image/Image - CreateDraw</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Image - DynamicImageMatrix</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Image/Image - DynamicImageMatrix</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Image - FilterWithOriginal</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Image/Image - FilterWithOriginal</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Image - ImageIterativeStretch</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Image/Image - ImageIterativeStretch</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Image - ImageTransparency</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Image/Image - ImageTransparency</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Image - MultiImage</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Image/Image - MultiImage</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Image - Pixelism</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Image/Image - Pixelism</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Image - Pointilism</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Image/Image - Pointilism</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Image - SingleFilter</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Image/Image - SingleFilter</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>KeyboardMouse - AbstractKeyboard1</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/KeyboardMouse/KeyboardMouse - AbstractKeyboard1</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>KeyboardMouse - AbstractKeyboard2</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/KeyboardMouse/KeyboardMouse - AbstractKeyboard2</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>KeyboardMouse - ConstantType</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/KeyboardMouse/KeyboardMouse - ConstantType</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>KeyboardMouse - ConstrainedCircle</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/KeyboardMouse/KeyboardMouse - ConstrainedCircle</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>KeyboardMouse - EasingCircle</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/KeyboardMouse/KeyboardMouse - EasingCircle</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>KeyboardMouse - Mouse1D</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/KeyboardMouse/KeyboardMouse - Mouse1D</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>KeyboardMouse - Mouse2D</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/KeyboardMouse/KeyboardMouse - Mouse2D</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>KeyboardMouse - MouseMethods</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/KeyboardMouse/KeyboardMouse - MouseMethods</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>KeyboardMouse - MouseSignals</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/KeyboardMouse/KeyboardMouse - MouseSignals</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>KeyboardMouse - StoringMouseCoords</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/KeyboardMouse/KeyboardMouse - </string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Math - Distance1D</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Math/Math - Distance1D</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Math - DoubleRandom</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Math/Math - DoubleRandom</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Math - IncrementDecrement</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Math/Math - IncrementDecrement</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Math - MixedSineWave</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Math/Math - MixedSineWave</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Math - ModulusFloat</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Math/Math - ModulusFloat</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Math - OperatorPrecedence</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Math/Math - OperatorPrecedence</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Math - PolarCoordinates</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Math/Math - PolarCoordinates</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Math - RandomLines</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Math/Math - RandomLines</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Math - RandomMultiplication</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Math/Math - RandomMultiplication</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Math - SinCosTan</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Math/Math - SinCosTan</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Movies - DoubleMovie</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Movies/Movies - DoubleMovie</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Movies - MoveAbove</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Movies/Movies - MoveAbove</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Movies - MovieMatrix</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Movies/Movies - MovieMatrix</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Movies - MovingMovie</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Movies/Movies - MovingMovie</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Movies - SimpleMovie</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Movies/Movies - SimpleMovie</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Movies - StretchingMovie</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Movies/Movies - StretchingMovie</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Noise - Noise1D</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Noise/Noise - Noise1D</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Noise - Noise2D</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Noise/Noise - Noise2D</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Noise - Noise3D</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Noise/Noise - Noise3D</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Noise - NoiseWave</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Noise/Noise - NoiseWave</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Numbers - NumberObject</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Numbers/Numbers - NumberObject</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Objects - BasicObject</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Objects/Objects - BasicObject</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Objects - KeyPressListener</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Objects/Objects - KeyPressListener</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Objects - ManyBasicObjects</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Objects/Objects - ManyBasicObjects</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Objects - ManyBasicObjectsAnimated</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Objects/Objects - ManyBasicObjectsAnimated</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Objects - MouseTracker</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Objects/Objects - MouseTracker</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Objects - ObjectUpdate</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Objects/Objects - ObjectUpdate</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>OpenGL - SimpleGL</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/OpenGL/OpenGL - SimpleGL</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Shapes - BlackWhiteCircles</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Shapes/Shapes - BlackWhiteCircles</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Shapes - DrawingAnAlien</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Shapes/Shapes - DrawingAnAlien</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Shapes - PieChart</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Shapes/Shapes - PieChart</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Shapes - PointsAndLines</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Shapes/Shapes - PointsAndLines</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Shapes - ShapeModes</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Shapes/Shapes - ShapeModes</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Shapes - ShapePrimitives</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Shapes/Shapes - ShapePrimitives</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Shapes - SimpleCurves</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Shapes/Shapes - SimpleCurves</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Shapes - SineCosineCurves</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Shapes/Shapes - SineCosineCurves</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Shapes - VertexShapes</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Shapes/Shapes - VertexShapes</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Sounds - AudioControl</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Sounds/Sounds - AudioControl</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Sounds - FadeInOut</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Sounds/Sounds - FadeInOut</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Sounds - PlayLoop</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Sounds/Sounds - PlayLoop</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Sounds - SystemSound</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Sounds/Sounds - SystemSound</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Transforms - AutoRotate</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Transforms/Transforms - AutoRotate</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Transforms - DynamicTransform</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Transforms/Transforms - DynamicTransform</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Transforms - Arm</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Transforms/Transforms - Arm</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Vectors - Orbs</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Vectors/Vectors - Orbs</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Vectors - Swarm</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Vectors/Vectors - Swarm</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Voice - Cacaphony</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Voice/Voice - Cacaphony</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Voice - PausableVoice</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Voice/Voice - PausableVoice</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Voice - QuietPrincess</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Voice/Voice - QuietPrincess</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>Voice - SimpleVoice</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Examples</string>
+			<key>Path</key>
+			<string>macExamples/Voice/Voice - SimpleVoice</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+	</dict>
+	<key>Identifier</key>
+	<string>org.c4.macExamplesBase</string>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Nodes</key>
+	<array>
+		<string>Advanced - EveryLetterEveryFont</string>
+		<string>Advanced - Kandinskyish</string>
+		<string>Advanced - Oscillator</string>
+		<string>Advanced - SketchPad</string>
+		<string>Advanced - StoringInputAdvanced</string>
+		<string>Arrays - Array1D</string>
+		<string>Arrays - Array2D</string>
+		<string>Arrays - MoreOnCArrays</string>
+		<string>Arrays - MutableArrays</string>
+		<string>Arrays - ObjectArray1D</string>
+		<string>Arrays - ObjectArray2D</string>
+		<string>Arrays - ObjectArrays</string>
+		<string>Basics - Animated</string>
+		<string>Basics - Coordinates</string>
+		<string>Basics - CustomMethods</string>
+		<string>Basics - DisplayRate</string>
+		<string>Basics - EventBased</string>
+		<string>Basics - Framerate</string>
+		<string>Basics - LogMessages</string>
+		<string>Basics - RecursiveCircle</string>
+		<string>Basics - RecursiveCircleRandom</string>
+		<string>Basics - Redraw</string>
+		<string>Basics - SingleFrame</string>
+		<string>Basics - SwitchingDrawStyles</string>
+		<string>Basics - WidthAndHeight</string>
+		<string>C4 - C4Animated1</string>
+		<string>C4 - C4Animated2</string>
+		<string>C4 - C4FadingImages</string>
+		<string>C4 - C4ForLoops</string>
+		<string>C4 - C4GL</string>
+		<string>C4 - C4GradientShapes</string>
+		<string>C4 - C4LoopingImages</string>
+		<string>C4 - C4Methods</string>
+		<string>C4 - C4Particles</string>
+		<string>C4 - C4Points</string>
+		<string>C4 - C4Quartz</string>
+		<string>C4 - C4RandomLines</string>
+		<string>C4 - C4Shapes</string>
+		<string>C4 - C4Wireframe</string>
+		<string>Color - ColorAndTransparency</string>
+		<string>Color - ColorRelativity</string>
+		<string>Color - ColorWheel</string>
+		<string>Color - Gradients</string>
+		<string>Color - GradientsAnimated</string>
+		<string>Control - Conditionals1</string>
+		<string>Control - Conditionals2</string>
+		<string>Control - EmbeddedIteration</string>
+		<string>Control - IterationForLoops</string>
+		<string>Control - LogicalOperators</string>
+		<string>Data - DatatypeConversion</string>
+		<string>Data - IntegersAndFloats</string>
+		<string>Data - TrueFalse</string>
+		<string>Data - VariableMath</string>
+		<string>Data - VariableScope</string>
+		<string>Data - VariablesWithAnimatedEllipses</string>
+		<string>DateTime - Clock</string>
+		<string>DateTime - CurrentDateTime</string>
+		<string>DateTime - MillisPatterns</string>
+		<string>Fonts - BasicFont</string>
+		<string>Fonts - RandomFont</string>
+		<string>Fonts - YourFonts</string>
+		<string>Image - BackgroundImage</string>
+		<string>Image - CombinedFilters</string>
+		<string>Image - CreateDraw</string>
+		<string>Image - DynamicImageMatrix</string>
+		<string>Image - FilterWithOriginal</string>
+		<string>Image - ImageIterativeStretch</string>
+		<string>Image - ImageTransparency</string>
+		<string>Image - MultiImage</string>
+		<string>Image - Pixelism</string>
+		<string>Image - Pointilism</string>
+		<string>Image - SingleFilter</string>
+		<string>KeyboardMouse - AbstractKeyboard1</string>
+		<string>KeyboardMouse - AbstractKeyboard2</string>
+		<string>KeyboardMouse - ConstantType</string>
+		<string>KeyboardMouse - ConstrainedCircle</string>
+		<string>KeyboardMouse - EasingCircle</string>
+		<string>KeyboardMouse - Mouse1D</string>
+		<string>KeyboardMouse - Mouse2D</string>
+		<string>KeyboardMouse - MouseMethods</string>
+		<string>KeyboardMouse - MouseSignals</string>
+		<string>KeyboardMouse - StoringMouseCoords</string>
+		<string>Math - Distance1D</string>
+		<string>Math - DoubleRandom</string>
+		<string>Math - IncrementDecrement</string>
+		<string>Math - MixedSineWave</string>
+		<string>Math - ModulusFloat</string>
+		<string>Math - OperatorPrecedence</string>
+		<string>Math - PolarCoordinates</string>
+		<string>Math - RandomLines</string>
+		<string>Math - RandomMultiplication</string>
+		<string>Math - SinCosTan</string>
+		<string>Movies - DoubleMovie</string>
+		<string>Movies - MoveAbove</string>
+		<string>Movies - MovieMatrix</string>
+		<string>Movies - MovingMovie</string>
+		<string>Movies - SimpleMovie</string>
+		<string>Movies - StretchingMovie</string>
+		<string>Noise - Noise1D</string>
+		<string>Noise - Noise2D</string>
+		<string>Noise - Noise3D</string>
+		<string>Noise - NoiseWave</string>
+		<string>Numbers - NumberObject</string>
+		<string>Objects - KeyPressListener</string>
+		<string>Objects - ManyBasicObjects</string>
+		<string>Objects - ManyBasicObjectsAnimated</string>
+		<string>Objects - MouseTracker</string>
+		<string>Objects - ObjectUpdate</string>
+		<string>OpenGL - SimpleGL</string>
+		<string>Shapes - BlackWhiteCircles</string>
+		<string>Shapes - DrawingAnAlien</string>
+		<string>Shapes - PieChart</string>
+		<string>Shapes - PointsAndLines</string>
+		<string>Shapes - ShapeModes</string>
+		<string>Shapes - ShapePrimitives</string>
+		<string>Shapes - SimpleCurves</string>
+		<string>Shapes - SineCosineCurves</string>
+		<string>Shapes - VertexShapes</string>
+		<string>Sounds - AudioControl</string>
+		<string>Sounds - FadeInOut</string>
+		<string>Sounds - PlayLoop</string>
+		<string>Sounds - SystemSound</string>
+		<string>Transforms - Arm</string>
+		<string>Transforms - AutoRotate</string>
+		<string>Transforms - DynamicTransform</string>
+		<string>Vectors - Orbs</string>
+		<string>Vectors - Swarm</string>
+		<string>Voice - Cacaphony</string>
+		<string>Voice - PausableVoice</string>
+		<string>Voice - QuietPrincess</string>
+		<string>Voice - SimpleVoice</string>
+	</array>
+</dict>
+</plist>

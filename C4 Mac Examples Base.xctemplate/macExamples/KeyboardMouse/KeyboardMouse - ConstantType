@@ -1,0 +1,31 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+C4String *theString;
+
+@implementation C4Canvas
+
+-(void)setup {
+[self drawStyle:EVENTBASED];
+[self windowWidth:400 andHeight:320];
+[C4String fill:1];
+theString = [[C4String stringWithString:@""] retain];
+}
+
+-(void)draw {
+[self background:0];
+[theString drawInRect:self.canvasRect];
+}
+
+-(void)keyPressed {
+if(keyChar == RETURN) theString = [[C4String stringWithString:@""] retain];
+else theString = [[theString stringByAppendingFormat:@"%c",keyChar] retain];
+}
+@end

@@ -1,0 +1,41 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+char c;
+float f;
+int i;
+Byte b;
+
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self background:0.9f];
+[C4Shape noStroke];
+c = 'w';
+//when you wish to convert between data types
+//you should alway "cast" them by writing the new type in brackets
+//do this directly before the variable
+f = (float)c;		//change to a character to float type
+i = (int)(f*1.4);	//change a float to an integer
+b = (Byte)(c/2);	//change an integer to a byte value
+}
+-(void)draw {
+//if you forget to "cast", you can sometimes get away with it...
+//but sometimes the result won't be what you expect
+
+//because the values here will convert to integers larger than 1
+//we need to convert them down to float values (between 0 and 1) to use for colors
+[C4Shape fillRed:FLOAT_FROM_255('A') green:0 blue:0];
+[C4Shape rectWithXPos:f yPos:1 width:'A' andHeight:'A'];
+[C4Shape fillRed:FLOAT_FROM_255('a') green:0 blue:0];
+[C4Shape rectWithXPos:i yPos:67 width:c andHeight:c];
+[C4Shape fillRed:FLOAT_FROM_255('z') green:0 blue:0];
+[C4Shape rectWithXPos:b yPos:134 width:b andHeight:-1*'z'];
+}
+@end

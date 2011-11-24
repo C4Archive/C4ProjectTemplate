@@ -1,0 +1,32 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+@implementation C4Canvas
+
+C4String *message, *framerate;
+
+-(void)setup {
+[self drawStyle:ANIMATED];
+[self windowWidth:400 andHeight:320];
+message = [[C4String stringWithString:
+@"Default framerate is set to 60, the actual framerate will try to match this"] retain];
+[C4String fill:1.0f];
+}
+
+-(void)draw {
+[self background:0];
+float timeInSeconds = (float)[C4DateTime millis]/1000.0f;
+framerate = [C4String stringWithFormat:@"framerate = %4.2f ",self.frameCount/timeInSeconds];
+
+[message drawInRect:NSMakeRect(20, self.centerPos.y, 360, 40)];
+[framerate drawAtPoint:NSMakePoint(20, 146)];
+}
+
+@end

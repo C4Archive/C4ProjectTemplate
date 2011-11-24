@@ -1,0 +1,45 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+int size = 80;
+int direction = -1;
+int step = 1;
+BOOL createPDF;
+
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self drawStyle:ANIMATED];
+createPDF = NO;
+if(createPDF) [self setupPDF];
+}
+-(void)draw {
+if(mouseIsPressed){
+[C4Shape stroke:1.0f];
+[C4Shape fill:0.0f];
+} else {
+[C4Shape stroke:0.0f];
+[C4Shape fillRed:mousePos.x/self.canvasWidth green:mousePos.y/self.canvasWidth blue:0.0f];
+}
+
+[C4Shape ellipseWithXPos:mousePos.x yPos:mousePos.y width:size andHeight:size];
+size = size + direction*step;
+if (size == 10 || size == 90) {
+direction = direction * -1;
+}
+}
+
+-(void)mouseReleased {
+if(createPDF) {
+[self endPDF];
+[self setupPDF];
+}
+}
+@end

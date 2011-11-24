@@ -1,0 +1,51 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@interface C4Canvas ()
+-(void)updateEasingPoint:(NSPoint *)point usingEaseValue:(float)easeValue;
+@end
+
+NSPoint *points;
+int pointCount = 200;
+float easing = 0.03f;
+
+@implementation C4Canvas
+
+-(void)setup {
+points = (NSPoint *)calloc(pointCount,sizeof(NSPoint));
+
+for(int i = 0; i < pointCount; i++) {
+points[i].x = self.canvasWidth/2;
+points[i].y = self.canvasHeight/2;
+}
+[self drawStyle:DISPLAYRATE];
+[self windowWidth:400 andHeight:320];
+[C4Shape noStroke];
+}
+
+-(void)draw {
+[self background:0.2f];
+for(int i = 0; i < pointCount; i++) {
+[self updateEasingPoint:&points[i] usingEaseValue:easing+(.003*i)];
+[C4Shape fillRed:1-(float)i/(float)pointCount green:0 blue:(float)i/(float)pointCount];
+[C4Shape circleAt:NSMakePoint(points[i].x, points[i].y) radius:30-(i/10)];
+}
+}
+
+-(void)updateEasingPoint:(NSPoint *)point usingEaseValue:(float)easeValue{
+float dx = mousePos.x - point->x;
+if([C4Math absf:dx] > 1){
+point->x += dx * easeValue;
+}
+float dy = mousePos.y - point->y;
+if([C4Math absf:dy] > 1){
+point->y += dy * easeValue;
+}
+}
+@end

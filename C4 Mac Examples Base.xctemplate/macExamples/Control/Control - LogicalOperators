@@ -1,0 +1,40 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+BOOL op = NO;
+
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+}
+-(void)draw {
+for(int i = 5; i <= self.canvasHeight-5; i+=5){
+[C4Shape stroke];
+[C4Shape stroke:0.22f];
+if((i > 70) && (i < 200)) {
+[C4Shape lineFromX:5 Y:i toX:145 Y:i];
+op = NO;
+}
+[C4Shape stroke:0.44f];
+if (i <= 70 || i >= 200) {
+[C4Shape lineFromX:155 Y:i toX:295 Y:i];
+op = YES;
+}
+if(op) {
+[C4Shape fillRed:1.0f green:0.2f blue:0.2f]; //because we use fill to define point color
+[C4Shape pointAtX:self.canvasWidth/2 Y:i];
+}
+if(!op) {
+[C4Shape fillRed:0.2f green:0.4f blue:1.0f]; //because we use fill to define point color
+[C4Shape pointAtX:self.canvasWidth/4 Y:i];
+}
+}
+}
+@end

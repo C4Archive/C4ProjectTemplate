@@ -1,0 +1,43 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+/*
+NOTE:	The array used in this example is called a "C array"
+It is NOT the same kind of array as an NSArray, or NSMutableArray
+You cannot call methods on a "C array"
+*/
+
+float cosWave[400];
+
+@implementation C4Canvas
+-(void)setup {
+[C4Shape stroke];
+[self flipCoordinates];
+[self windowWidth:400 andHeight:320];
+for(int i = 0; i < self.canvasWidth; i++) {
+float amount = [C4Math map:i fromMin:0 max:400 toMin:0 max:PI];
+cosWave[i] = [C4Math absf:[C4Math cos:amount]];
+}
+}
+-(void)draw {
+[self background:0];
+for(int i = 0; i < self.canvasWidth; i++) {
+[C4Shape stroke:cosWave[i]];
+[C4Shape lineFromX:i Y:0 toX:i Y:self.canvasHeight/3];
+}
+for(int i = 0; i < self.canvasWidth; i++) {
+[C4Shape stroke:cosWave[i]/4];
+[C4Shape lineFromX:i Y:self.canvasHeight/3 toX:i Y:self.canvasHeight/3*2];
+}
+for(int i = 0; i < self.canvasWidth; i++) {
+[C4Shape stroke:1-cosWave[i]];
+[C4Shape lineFromX:i Y:self.canvasHeight/3*2 toX:i Y:self.canvasHeight];
+}
+}
+@end

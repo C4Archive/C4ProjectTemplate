@@ -1,0 +1,33 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self drawStyle:EVENTBASED];
+[self background:0.15f];
+[C4Shape noStroke];
+[C4Shape rectMode:CENTER];
+}
+
+-(void)draw {
+[self background:0.15f];
+[C4Shape fill:1.0f alpha:0.8f];
+[C4Shape rectWithXPos:mousePos.x 
+yPos:self.canvasHeight/2 
+width:mousePos.y/2+10 
+andHeight:mousePos.y/2+10];
+int inverseX = self.canvasWidth-mousePos.x;
+int	inverseY = self.canvasHeight-mousePos.y;
+[C4Shape rectWithXPos:inverseX 
+yPos:self.canvasHeight/2 
+width:inverseY/2+10 
+andHeight:inverseY/2+10];
+}
+@end

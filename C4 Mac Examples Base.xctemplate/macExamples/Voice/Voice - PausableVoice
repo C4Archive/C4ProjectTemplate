@@ -1,0 +1,40 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+C4String *thingsToSay;
+C4Voice *orator;
+
+@implementation C4Canvas
+
+-(void)setup {
+thingsToSay = [[C4String stringWithString:
+@"The voice synthesizer can speak any sentence you give it."] retain];
+orator = [[[C4Voice alloc] initWithVoice:RALPH] retain];
+
+[orator speak:thingsToSay];
+}
+
+-(void)draw {
+}
+
+-(void)mousePressed {
+if([orator isSpeaking]){
+[orator pause:ENDOFWORD];
+} else {
+[orator continueSpeaking];
+}
+}
+
+-(void)keyPressed {
+if(![orator isSpeaking] && keyChar == SPACEBAR) {
+[orator speak:thingsToSay];
+}
+}
+@end

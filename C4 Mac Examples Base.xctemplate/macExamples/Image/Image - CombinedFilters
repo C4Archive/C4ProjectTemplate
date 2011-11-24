@@ -1,0 +1,40 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+C4Image *foregroundImage, *backgroundImage;
+
+@implementation C4Canvas
+
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+
+backgroundImage = [C4Image imageName:@"C4Wood.png"];
+backgroundImage = [C4Image imageName:@"C4Sky.png"];
+
+//This line sets up the image to use multiple filters
+backgroundImage.drawFilteredImage = YES;
+[backgroundImage combinedFilter];
+}
+
+-(void)draw {	
+
+//Filters are applied in order
+
+//blur, then edges
+[backgroundImage zoomBlur:NSZeroPoint amount:5];
+[backgroundImage edges:100.0f];
+
+//blur, then edges
+//    [backgroundImage edges:100.0f];
+//    [backgroundImage zoomBlur:NSZeroPoint amount:5];
+
+[backgroundImage drawAt:NSZeroPoint];
+}
+@end

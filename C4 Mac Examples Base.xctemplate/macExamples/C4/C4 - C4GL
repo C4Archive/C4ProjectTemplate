@@ -1,0 +1,71 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@interface C4Canvas () {}
+-(NSPoint)getGLMousePos;
+@end
+
+CGFloat unitDistance;
+
+@implementation C4Canvas
+
+-(void)setup {
+[self drawStyle:DISPLAYRATE];
+[self windowWidth:400 andHeight:320];
+unitDistance = 0.20f;
+}
+
+-(void)draw {
+glPushMatrix();
+NSPoint glMousePos = [self getGLMousePos];
+glTranslatef(glMousePos.x - 3*unitDistance, glMousePos.y - 2*unitDistance, 0);
+glScaled(unitDistance, unitDistance*self.canvasWidth/self.canvasHeight, 0.0f);
+glLineWidth(1.0f);
+glBegin(GL_LINE_STRIP);      
+glColor4f(1.0f, 0.2f, 0.2f, 1.0f);
+glVertex2d(1, 1);
+glVertex2d(3, 1);
+glVertex2d(3, 0);
+glVertex2d(0, 0);
+glVertex2d(0, 0);
+glVertex2d(0, 4);
+glVertex2d(1, 4);
+glColor4f(0.3f, 0.3f, 0.3f, 1.0f);
+glVertex2d(3, 4);
+glVertex2d(3, 3);
+glColor4f(0.2f, 0.4f, 1.0f, 1.0f);
+glVertex2d(3, 2);
+glVertex2d(4, 2);
+glVertex2d(4, 4);
+glVertex2d(5, 4);
+glVertex2d(5, 2);
+glVertex2d(6, 2);
+glVertex2d(6, 1);
+glVertex2d(5, 1);
+glVertex2d(5, 0);
+glVertex2d(4, 0);
+glVertex2d(4, 1);
+glVertex2d(2, 1);
+glColor4f(0.3f, 0.3f, 0.3f, 1.0f);
+glVertex2d(2, 3);
+glColor4f(1.0f, 0.2f, 0.2f, 1.0f);
+glVertex2d(1, 3);
+glVertex2d(1, 1);
+glEnd();
+glPopMatrix();
+}
+
+-(NSPoint)getGLMousePos {
+NSPoint p = mousePos;
+p.x = ((2*mousePos.x)-self.canvasWidth)/self.canvasWidth;
+p.y = ((2*mousePos.y)-self.canvasHeight)/self.canvasHeight;
+return p;
+}
+
+@end

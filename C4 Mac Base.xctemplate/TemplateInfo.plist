@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Definitions</key>
+	<dict>
+		<key>*:*:importCocoa</key>
+		<string>#import &lt;Cocoa/Cocoa.h&gt;
+</string>
+		<key>___PACKAGENAME___-Info.plist:NSHumanReadableCopyright</key>
+		<string>&lt;key&gt;NSHumanReadableCopyright&lt;/key&gt;
+&lt;string&gt;Copyright © ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.&lt;/string&gt;
+</string>
+	</dict>
+	<key>Identifier</key>
+	<string>org.c4.macBase</string>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Platforms</key>
+	<array>
+		<string>com.apple.platform.macosx</string>
+	</array>
+	<key>Project</key>
+	<dict>
+		<key>Configurations</key>
+		<dict>
+			<key>Debug</key>
+			<dict>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>NO</string>
+			</dict>
+			<key>Release</key>
+			<dict/>
+		</dict>
+		<key>SDK</key>
+		<string>macosx</string>
+		<key>SharedSettings</key>
+		<dict>
+			<key>ARCHS</key>
+			<string>$(ARCHS_STANDARD_32_BIT)</string>
+			<key>GCC_VERSION</key>
+			<string>com.apple.compilers.llvm.clang.1_0</string>
+			<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+			<string>YES</string>
+			<key>MACOSX_DEPLOYMENT_TARGET</key>
+			<string>latest_macosx</string>
+		</dict>
+	</dict>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>Configurations</key>
+			<dict>
+				<key>Debug</key>
+				<dict>
+					<key>COPY_PHASE_STRIP</key>
+					<string>NO</string>
+					<key>GCC_DYNAMIC_NO_PIC</key>
+					<string>NO</string>
+				</dict>
+				<key>Release</key>
+				<dict>
+					<key>COPY_PHASE_STRIP</key>
+					<string>YES</string>
+					<key>DEBUG_INFORMATION_FORMAT</key>
+					<string>dwarf-with-dsym</string>
+				</dict>
+			</dict>
+			<key>SharedSettings</key>
+			<dict>
+				<key>GCC_ENABLE_OBJC_EXCEPTIONS</key>
+				<string>YES</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

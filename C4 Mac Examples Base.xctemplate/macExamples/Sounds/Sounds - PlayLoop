@@ -1,0 +1,21 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+@implementation C4Canvas
+
+C4Sound *clip;
+
+-(void)setup {
+clip = [C4Sound soundWithName:@"loop" andType:@"aif"];
+[clip play];
+[clip setLoops:YES];
+}
+
+@end

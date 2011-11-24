@@ -1,0 +1,30 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+C4Image *bg;
+int y;
+
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self drawStyle:DISPLAYRATE];
+
+y = 0;
+bg = [C4Image imageName:@"C4Sky" andType:@"png"];
+[C4Shape stroke:1.0f];
+}
+-(void)draw {
+[self backgroundImage:bg];
+y ++;
+if(y > self.canvasHeight) y = 0;
+
+[C4Shape lineFromX:0 Y:y toX:self.canvasWidth Y:y];
+}
+@end

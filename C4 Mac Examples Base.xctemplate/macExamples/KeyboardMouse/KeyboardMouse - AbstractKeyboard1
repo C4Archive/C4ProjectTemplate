@@ -1,0 +1,41 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+float rectWidth;
+
+@implementation C4Canvas
+-(void)setup {
+[self drawStyle:ANIMATED];
+[self windowWidth:400 andHeight:320];
+rectWidth = self.canvasWidth/26.0f;
+[C4Shape noStroke];
+[C4Shape fill:1.0f];
+[C4Shape fill];
+}
+
+-(void)draw{	
+[self background:0 alpha:0.015f];
+if (keyIsPressed && keyChar >= 'A' && keyChar <= 'z') {
+if (keyChar <= 'Z') {
+int mappedKeyValue = keyChar - 'A';
+[C4Shape rectWithXPos:rectWidth*mappedKeyValue 
+yPos:self.canvasHeight/2 
+width:rectWidth
+andHeight:self.canvasHeight/2];
+} else {
+int mappedKeyValue = keyChar - 'a';
+[C4Shape rectWithXPos:rectWidth*mappedKeyValue 
+yPos:0 
+width:rectWidth 
+andHeight:self.canvasHeight/2];
+}
+}
+}
+@end

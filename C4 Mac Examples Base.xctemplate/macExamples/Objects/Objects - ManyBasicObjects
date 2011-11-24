@@ -1,0 +1,74 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+/*
+When creating a new class it is better to create a new set of .h and .m files
+
+But, for the sake of simplicity, we are adding an interface and an implementation
+directly to our canvas class...
+
+If you do it this way, you need to have the new class interface written out first, before the canvas calls it
+*/
+
+////////////////////////////////////////////////////////////////
+// The Basic Object
+////////////////////////////////////////////////////////////////
+
+@interface BasicObject : C4Object {
+C4Color *randomColor;
+NSPoint position;
+CGFloat radius;
+}
+@end
+
+@implementation BasicObject 
+
+- (id)init
+{
+self = [super init];
+if (self) {
+randomColor = [[C4Color colorWithRed:FLOAT_FROM_255([C4Math randomInt:255])
+green:FLOAT_FROM_255([C4Math randomInt:255])
+blue:FLOAT_FROM_255([C4Math randomInt:255])] retain];
+position = NSMakePoint([C4Math randomInt:400], [C4Math randomInt:320]);
+radius = [C4Math randomInt:20]+10;
+}
+return self;
+}
+
+-(void)draw {
+[C4Shape noStroke];
+[C4Shape fillColor:randomColor];
+[C4Shape circleAt:position radius:radius];
+}
+
+@end
+
+////////////////////////////////////////////////////////////////
+// The Canvas
+////////////////////////////////////////////////////////////////
+
+#import "C4Canvas.h"
+
+NSMutableArray *objectsArray;
+
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+objectsArray = [[[NSMutableArray alloc] initWithCapacity:0] retain];
+for(int i = 0; i < 300; i++) {
+BasicObject *b = [[BasicObject alloc] init];
+[objectsArray addObject:b];
+}
+}
+
+-(void)draw {
+[self background:0 alpha:0.005];
+for(BasicObject *anObject in objectsArray) [anObject draw];
+}
+@end

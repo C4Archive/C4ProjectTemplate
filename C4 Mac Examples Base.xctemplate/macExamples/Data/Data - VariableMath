@@ -1,0 +1,34 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@implementation C4Canvas
+-(void)setup {
+[self flipCoordinates];
+[self windowWidth:400 andHeight:320];
+[self background:0];
+[C4Shape stroke:0.6f];
+[C4Shape strokeWidth:1];
+}
+-(void)draw {
+int a = 40;
+int b = 80;
+int c = a*8;
+int d = a*9;
+int e = b-a;
+int f = b*2;
+int g = f+e;
+
+[C4Shape lineFromX:a Y:f toX:b Y:g];
+[C4Shape lineFromX:b Y:e toX:d Y:c];
+[C4Shape lineFromX:a Y:e toX:d-e Y:c];
+
+[C4Shape strokeRed:0.5 green:0.5 blue:1.0];
+[C4Shape lineFromX:b Y:e toX:b Y:g];
+}
+@end

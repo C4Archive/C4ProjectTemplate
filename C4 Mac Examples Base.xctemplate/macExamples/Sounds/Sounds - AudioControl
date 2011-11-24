@@ -1,0 +1,112 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+@implementation C4Canvas
+
+NSRect playRect, stopRect, scrubRect;
+BOOL playHover, stopHover, scrubHover;
+BOOL playPressed, stopPressed, scrubPressed;
+C4String *play, *stop;
+C4Image *logo;
+C4Sound *clip;
+
+-(void)setup {
+    [self drawStyle:DISPLAYRATE];
+    [self windowWidth:400 andHeight:320];
+    clip = [C4Sound soundWithName:@"loop" andType:@"aif"];
+    [clip setLoops:YES];
+    
+    playRect = NSMakeRect(10, 10, 50, 20);
+    stopRect = NSMakeRect(70, 10, 50, 20);
+    scrubRect = NSMakeRect(0, self.centerPos.y-10, 60, 40);
+    
+    [C4Shape noFill];
+    [C4Shape stroke];
+    [C4Shape stroke:1];
+    
+    play = [[C4String stringWithString:@" play"] retain];
+    stop = [[C4String stringWithString:@" stop"] retain];
+    [C4String fill:1.0f];
+    
+    logo = [[C4Image imageName:@"C4Orange.png"] retain];
+}
+
+-(void)draw {
+    if(!scrubPressed)
+        scrubRect.origin.x = [clip currentTime]/[clip duration]*self.canvasWidth;
+    
+    [self background:0];
+    [C4Shape stroke:1.0f];
+    if(playPressed) [C4Shape strokeRed:0.2f green:0.4f blue:1.0f];
+    else if(playHover) [C4Shape strokeRed:1.0f green:0.2f blue:0.2f];
+    [C4Shape rectAt:playRect.origin size:playRect.size];
+    
+    [C4Shape stroke:1.0f];
+    if(stopPressed) [C4Shape strokeRed:0.2f green:0.4f blue:1.0f];
+    else if(stopHover) [C4Shape strokeRed:1.0f green:0.2f blue:0.2f];
+    [C4Shape rectAt:stopRect.origin size:stopRect.size];
+    
+    //    [C4Shape stroke:1.0f];
+    //    if(scrubPressed) [C4Shape strokeRed:0.2f green:0.4f blue:1.0f];
+    //    else if(scrubHover) [C4Shape strokeRed:1.0f green:0.2f blue:0.2f];
+    //    [C4Shape rectAt:scrubRect.origin size:scrubRect.size];
+    
+    [play drawInRect:playRect];
+    [stop drawInRect:stopRect];
+    [[C4String stringWithFormat:@"%4.2f",[clip currentTime]] drawAtPoint:NSMakePoint(140,10)];
+    
+    [logo drawInRect:scrubRect];
+}
+
+-(void)mouseMoved {
+    if(NSPointInRect(mousePos, playRect)) playHover = YES;
+    else playHover = NO;
+    
+    if(NSPointInRect(mousePos, stopRect)) stopHover = YES;
+    else stopHover = NO;
+    
+    if(NSPointInRect(mousePos, scrubRect)) scrubHover = YES;
+    else scrubHover = NO;
+}
+
+-(void)mousePressed {
+    if(playHover){ 
+        playPressed = YES; 
+        if(![clip isPlaying]){
+            [clip play];
+        } else {
+            [clip resume];
+        }
+    }
+    if(stopHover){
+        stopPressed = YES;
+        if([clip isPlaying]){
+            [clip pause];
+        }
+    }
+    if(scrubHover) scrubPressed = YES;
+}
+
+-(void)mouseReleased {
+    playPressed = NO;
+    stopPressed = NO;
+    
+    if(scrubPressed) {
+        [clip setCurrentTime:scrubRect.origin.x/self.canvasWidth*[clip duration]];
+    }
+    scrubPressed = NO;
+}
+
+-(void)mouseDragged {
+    if(scrubPressed){
+        scrubRect.origin.x += mousePos.x - prevMousePos.x;
+    }
+}
+@end

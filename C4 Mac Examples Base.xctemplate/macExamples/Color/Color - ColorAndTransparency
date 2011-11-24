@@ -1,0 +1,48 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self background:0.0f];
+[C4Shape rectMode:CORNER];
+[C4Shape noStroke];
+}
+-(void)draw {
+[C4Shape fillRed:0.0f green:0.0f blue:1.0f];
+[C4Shape rectWithXPos:0.0f 
+yPos:0.0f 
+width:self.canvasWidth/2 
+andHeight:self.canvasHeight];
+//1.0f means 100% opacity
+[C4Shape fillRed:1.0f green:0.0f blue:0.0f alpha:1.0f];
+[C4Shape rectWithXPos:0.0f 
+yPos:0.0f 
+width:self.canvasWidth
+andHeight:self.canvasHeight/5];
+//75% opacity
+[C4Shape fillRed:1.0f green:0.0f blue:0.0f alpha:0.75f];
+[C4Shape rectWithXPos:0.0f 
+yPos:self.canvasHeight/4 
+width:self.canvasWidth 
+andHeight:self.canvasHeight/5];
+//50% opacity
+[C4Shape fillRed:1.0f green:0.0f blue:0.0f alpha:0.5f];
+[C4Shape rectWithXPos:0.0f 
+yPos:self.canvasHeight/2 
+width:self.canvasWidth 
+andHeight:self.canvasHeight/5];
+//25% opacity
+[C4Shape fillRed:1.0f green:0.0f blue:0.0f alpha:0.25f];
+[C4Shape rectWithXPos:0.0f 
+yPos:self.canvasHeight*.75 
+width:self.canvasWidth 
+andHeight:self.canvasHeight/5];
+}
+@end

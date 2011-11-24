@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Definitions</key>
+	<dict>
+		<key>en.lproj/C4A Media/C4.mov</key>
+		<dict>
+			<key>Group</key>
+			<string>C4A Media</string>
+			<key>Path</key>
+			<string>C4.mov</string>
+		</dict>
+		<key>en.lproj/C4A Media/C4.qtz</key>
+		<dict>
+			<key>Group</key>
+			<string>C4A Media</string>
+			<key>Path</key>
+			<string>C4.qtz</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4A Media/C4Black.png</key>
+		<dict>
+			<key>Group</key>
+			<string>C4A Media</string>
+			<key>Path</key>
+			<string>C4Black.png</string>
+		</dict>
+		<key>en.lproj/C4A Media/C4Blue.png</key>
+		<dict>
+			<key>Group</key>
+			<string>C4A Media</string>
+			<key>Path</key>
+			<string>C4Blue.png</string>
+		</dict>
+		<key>en.lproj/C4A Media/C4Orange.png</key>
+		<dict>
+			<key>Group</key>
+			<string>C4A Media</string>
+			<key>Path</key>
+			<string>C4Orange.png</string>
+		</dict>
+		<key>en.lproj/C4A Media/C4Red.png</key>
+		<dict>
+			<key>Group</key>
+			<string>C4A Media</string>
+			<key>Path</key>
+			<string>C4Red.png</string>
+		</dict>
+		<key>en.lproj/C4A Media/C4Sky.png</key>
+		<dict>
+			<key>Group</key>
+			<string>C4A Media</string>
+			<key>Path</key>
+			<string>C4Sky.png</string>
+		</dict>
+		<key>en.lproj/C4A Media/C4Wood.png</key>
+		<dict>
+			<key>Group</key>
+			<string>C4A Media</string>
+			<key>Path</key>
+			<string>C4Wood.png</string>
+		</dict>
+		<key>en.lproj/C4A Media/loop.aif</key>
+		<dict>
+			<key>Group</key>
+			<string>C4A Media</string>
+			<key>Path</key>
+			<string>loop.aif</string>
+		</dict>
+	</dict>
+	<key>Identifier</key>
+	<string>org.c4.macMedia</string>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Nodes</key>
+	<array>
+		<string>en.lproj/C4A Media/C4.mov</string>
+		<string>en.lproj/C4A Media/C4.qtz</string>
+		<string>en.lproj/C4A Media/C4Black.png</string>
+		<string>en.lproj/C4A Media/C4Blue.png</string>
+		<string>en.lproj/C4A Media/C4Orange.png</string>
+		<string>en.lproj/C4A Media/C4Red.png</string>
+		<string>en.lproj/C4A Media/C4Sky.png</string>
+		<string>en.lproj/C4A Media/C4Wood.png</string>
+		<string>en.lproj/C4A Media/loop.aif</string>
+	</array>
+</dict>
+</plist>

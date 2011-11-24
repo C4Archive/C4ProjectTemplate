@@ -1,0 +1,37 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@interface C4Canvas () {}
+-(void)recursiveCirclesAtX:(int)x withRadius:(int)radius andLevels:(int)levels;
+@end
+
+@implementation C4Canvas
+
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self background:0.2f];
+[C4Shape noStroke];
+}
+
+-(void)draw {
+[self recursiveCirclesAtX:self.canvasWidth*3/4 withRadius:500 andLevels:6];
+}
+
+-(void)recursiveCirclesAtX:(int)x withRadius:(int)radius andLevels:(int)levels {
+float tt = 0.5 * levels / 4.0;
+[C4Shape fill:tt];
+[C4Shape ellipseWithXPos:x yPos:self.canvasHeight/3 width:radius*2 andHeight:radius*2];
+
+if(levels > 1) {
+levels = levels - 1;
+[self recursiveCirclesAtX:x-radius/2 withRadius:radius/2 andLevels:levels];
+[self recursiveCirclesAtX:x+radius/2 withRadius:radius/2 andLevels:levels];
+}
+}
+@end

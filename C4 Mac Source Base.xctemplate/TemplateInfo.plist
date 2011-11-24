@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Definitions</key>
+	<dict>
+		<key>*:comments</key>
+		<string>//
+//  ___FILENAME___
+//  ___PACKAGENAME___
+//
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//  Copyright ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
+//
+</string>
+		<key>*:import:*</key>
+		<string>#import &quot;___*___&quot;
+</string>
+		<key>___PACKAGENAME___-Prefix.pch</key>
+		<dict>
+			<key>Beginning</key>
+			<string>//
+// Prefix header for all source files of the &apos;___PACKAGENAME___&apos; target in the &apos;___PACKAGENAME___&apos; project
+//
+</string>
+			<key>Group</key>
+			<string>C4 Framework</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>___PACKAGENAME___-Prefix.pch:extras</key>
+		<dict>
+			<key>Beginning</key>
+			<string>#import &quot;C4Defines.h&quot;</string>
+			<key>End</key>
+			<string>#import &quot;C4Imports.h&quot;</string>
+			<key>Indent</key>
+			<integer>1</integer>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>___PACKAGENAME___-Prefix.pch:objC</key>
+		<dict>
+			<key>Beginning</key>
+			<string>#ifdef __OBJC__</string>
+			<key>End</key>
+			<string>#endif</string>
+			<key>Indent</key>
+			<integer>1</integer>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>___PACKAGENAME___AppDelegate.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Framework</string>
+			<key>Path</key>
+			<string>macSource/___PACKAGENAME___AppDelegate.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>___PACKAGENAME___AppDelegate.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Framework</string>
+			<key>Path</key>
+			<string>macSource/___PACKAGENAME___AppDelegate.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Canvas.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Canvas.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Canvas.m</key>
+		<dict>
+			<key>Path</key>
+			<string>macSource/C4Canvas.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Color.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Color.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Color.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Color.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4DateTime.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4DateTime.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4DateTime.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4DateTime.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Defines.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Framework</string>
+			<key>Path</key>
+			<string>macSource/C4Defines.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Font.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Font.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Font.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Font.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Foundation.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Foundation.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Foundation.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Foundation.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4GlobalShapeAttributes.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4GlobalShapeAttributes.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4GlobalShapeAttributes.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4GlobalShapeAttributes.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4GlobalStringAttributes.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4GlobalStringAttributes.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4GlobalStringAttributes.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4GlobalStringAttributes.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4GlobalTypeAttributes.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4GlobalTypeAttributes.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4GlobalTypeAttributes.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4GlobalTypeAttributes.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Gradient.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Gradient.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Gradient.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Gradient.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Image.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Image.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Image.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Image.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Imports.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Framework</string>
+			<key>Path</key>
+			<string>macSource/C4Imports.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Math.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Math.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Math.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Math.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Movie.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Movie.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Movie.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Movie.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Noise.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Noise.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Noise.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Noise.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Object.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Object.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Object.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Object.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4OpenGLView.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4OpenGLView.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4OpenGLView.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4OpenGLView.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Quartz.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Quartz.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Quartz.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Quartz.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Shape.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Shape.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Shape.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Shape.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Sound.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Sound.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Sound.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Sound.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4String.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4String.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4String.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4String.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Transform.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Transform.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Transform.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Transform.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Vector.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Vector.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Vector.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Vector.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/C4Voice.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Voice.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+		<key>en.lproj/C4 Source/C4Voice.m</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/C4Voice.m</string>
+		</dict>
+		<key>en.lproj/C4 Source/Singleton.h</key>
+		<dict>
+			<key>Group</key>
+			<string>C4 Source</string>
+			<key>Path</key>
+			<string>macSource/Singleton.h</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+	</dict>
+	<key>Identifier</key>
+	<string>org.c4.macSourceBase</string>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Nodes</key>
+	<array>
+		<string>___PACKAGENAME___-Prefix.pch:extras</string>
+		<string>___PACKAGENAME___AppDelegate.h</string>
+		<string>___PACKAGENAME___AppDelegate.m</string>
+		<string>en.lproj/C4 Source/C4Canvas.h</string>
+		<string>en.lproj/C4 Source/C4Canvas.m</string>
+		<string>en.lproj/C4 Source/C4Color.h</string>
+		<string>en.lproj/C4 Source/C4Color.m</string>
+		<string>en.lproj/C4 Source/C4DateTime.h</string>
+		<string>en.lproj/C4 Source/C4DateTime.m</string>
+		<string>en.lproj/C4 Source/C4Defines.h</string>
+		<string>en.lproj/C4 Source/C4Font.h</string>
+		<string>en.lproj/C4 Source/C4Font.m</string>
+		<string>en.lproj/C4 Source/C4Foundation.h</string>
+		<string>en.lproj/C4 Source/C4Foundation.m</string>
+		<string>en.lproj/C4 Source/C4GlobalShapeAttributes.h</string>
+		<string>en.lproj/C4 Source/C4GlobalShapeAttributes.m</string>
+		<string>en.lproj/C4 Source/C4GlobalTypeAttributes.h</string>
+		<string>en.lproj/C4 Source/C4GlobalTypeAttributes.m</string>
+		<string>en.lproj/C4 Source/C4GlobalStringAttributes.h</string>
+		<string>en.lproj/C4 Source/C4GlobalStringAttributes.m</string>
+		<string>en.lproj/C4 Source/C4Gradient.h</string>
+		<string>en.lproj/C4 Source/C4Gradient.m</string>
+		<string>en.lproj/C4 Source/C4Image.h</string>
+		<string>en.lproj/C4 Source/C4Image.m</string>
+		<string>en.lproj/C4 Source/C4Imports.h</string>
+		<string>en.lproj/C4 Source/C4Math.h</string>
+		<string>en.lproj/C4 Source/C4Math.m</string>
+		<string>en.lproj/C4 Source/C4Movie.h</string>
+		<string>en.lproj/C4 Source/C4Movie.m</string>
+		<string>en.lproj/C4 Source/C4Noise.h</string>
+		<string>en.lproj/C4 Source/C4Noise.m</string>
+		<string>en.lproj/C4 Source/C4Object.h</string>
+		<string>en.lproj/C4 Source/C4Object.m</string>
+		<string>en.lproj/C4 Source/C4OpenGLView.h</string>
+		<string>en.lproj/C4 Source/C4OpenGLView.m</string>
+		<string>en.lproj/C4 Source/C4Quartz.h</string>
+		<string>en.lproj/C4 Source/C4Quartz.m</string>
+		<string>en.lproj/C4 Source/C4Shape.h</string>
+		<string>en.lproj/C4 Source/C4Shape.m</string>
+		<string>en.lproj/C4 Source/C4Sound.h</string>
+		<string>en.lproj/C4 Source/C4Sound.m</string>
+		<string>en.lproj/C4 Source/C4String.h</string>
+		<string>en.lproj/C4 Source/C4String.m</string>
+		<string>en.lproj/C4 Source/C4Transform.h</string>
+		<string>en.lproj/C4 Source/C4Transform.m</string>
+		<string>en.lproj/C4 Source/C4Vector.h</string>
+		<string>en.lproj/C4 Source/C4Vector.m</string>
+		<string>en.lproj/C4 Source/C4Voice.h</string>
+		<string>en.lproj/C4 Source/C4Voice.m</string>
+		<string>en.lproj/C4 Source/Singleton.h</string>
+	</array>
+</dict>
+</plist>

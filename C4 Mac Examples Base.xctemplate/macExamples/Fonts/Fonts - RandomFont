@@ -1,0 +1,44 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import <Cocoa/Cocoa.h>
+
+@implementation C4Canvas
+
+NSArray *allFontNames;
+
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+
+allFontNames = [[C4Font availableFonts] retain];
+}
+
+-(void)draw {
+[self background:0];
+
+NSInteger rand = [C4Math randomInt:[allFontNames count]];
+
+C4String *fontName = [allFontNames objectAtIndex:rand];
+C4Font *currentFont = [C4Font fontWithName:fontName size:16];
+
+[C4String font:currentFont];
+[C4String fill:1.0f];
+
+NSPoint drawPoint = NSMakePoint(20, self.centerPos.y - 2* [currentFont ascender]);
+
+[[C4String stringWithFormat:
+@"Current Font: %@ \nFamily Name: %@ \nDisplay Name: %@ \n#%d of %d", 
+fontName, [currentFont familyName], 
+[currentFont displayName], 
+rand, [allFontNames count]] drawAtPoint:drawPoint];
+}
+
+-(void)mousePressed {
+[self redraw];
+}
+@end

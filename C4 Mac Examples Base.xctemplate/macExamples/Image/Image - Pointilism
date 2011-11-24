@@ -1,0 +1,37 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+C4Image *myImage;
+
+@implementation C4Canvas
+-(void)setup {
+//Usually you should set up your canvas first
+//But, since we use the image dimensions to set the canvas size, we should create the image first...
+myImage = [C4Image imageName:@"C4Sky.png"];
+
+[self windowWidth:myImage.imageWidth andHeight:myImage.imageHeight];
+[self drawStyle:DISPLAYRATE];
+[self background:1.0f];
+
+[myImage loadPixelData];
+
+[C4Shape strokeWidth:1];
+[C4Shape stroke:1];
+}
+
+-(void)draw {
+int x = [C4Math randomInt:self.canvasWidth];
+int y = [C4Math randomInt:self.canvasHeight];
+C4Color *color = [myImage colorAtX:x andY:y];
+float pointilize = [C4Math map:mousePos.x fromMin:0 max:self.canvasWidth toMin:2 max:18];
+[C4Shape fillColor:color];
+[C4Shape circleAt:NSMakePoint(x, y) radius:pointilize];
+}
+@end

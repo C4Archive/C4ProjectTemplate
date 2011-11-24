@@ -1,0 +1,116 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+CGGradientRef gradient;
+float theta0, theta1, theta2, theta3, rowHeight, colWidth;
+float increment;
+int rows, cols;
+NSRect mainRect;
+NSPoint p1, p2, p3, p4, p5, p6, p7, p8;
+float radius;
+
+@implementation C4Canvas
+
+-(void)setup {
+mainRect = NSMakeRect(20, 20, 350, 290);
+rows= 40;
+cols = 32;
+rowHeight = (float)mainRect.size.height/(float)cols;
+colWidth = (float)mainRect.size.width/(float)rows;
+radius = 115;
+increment = 0.75;
+[self drawStyle:DISPLAYRATE];
+[self windowWidth:400 andHeight:320];
+[self background:0];
+}
+
+-(void)draw {
+p1.x = radius*[C4Math cos:DEGREES_TO_RADIANS(theta1)] + self.canvasWidth/2;
+p1.y = radius*[C4Math sin:DEGREES_TO_RADIANS(theta1)] + self.canvasHeight/2;
+p2.x = radius*[C4Math cos:DEGREES_TO_RADIANS(theta1+180)] + self.canvasWidth/2;
+p2.y = radius*[C4Math sin:DEGREES_TO_RADIANS(theta1+180)] + self.canvasHeight/2;
+p3.x = radius*[C4Math cos:DEGREES_TO_RADIANS(theta2)] + self.canvasWidth/2;
+p3.y = radius*[C4Math sin:DEGREES_TO_RADIANS(theta2)] + self.canvasHeight/2;
+p4.x = radius*[C4Math cos:DEGREES_TO_RADIANS(theta2+180)] + self.canvasWidth/2;
+p4.y = radius*[C4Math sin:DEGREES_TO_RADIANS(theta2+180)] + self.canvasHeight/2;
+p5.x = radius*[C4Math cos:DEGREES_TO_RADIANS(theta3)] + self.canvasWidth/2;
+p5.y = radius*[C4Math sin:DEGREES_TO_RADIANS(theta3)] + self.canvasHeight/2;
+p6.x = radius*[C4Math cos:DEGREES_TO_RADIANS(theta3+180)] + self.canvasWidth/2;
+p6.y = radius*[C4Math sin:DEGREES_TO_RADIANS(theta3+180)] + self.canvasHeight/2;
+p7.x = radius*[C4Math cos:DEGREES_TO_RADIANS(theta0)] + self.canvasWidth/2;
+p7.y = radius*[C4Math sin:DEGREES_TO_RADIANS(theta0)] + self.canvasHeight/2;
+p8.x = radius*[C4Math cos:DEGREES_TO_RADIANS(theta0+180)] + self.canvasWidth/2;
+p8.y = radius*[C4Math sin:DEGREES_TO_RADIANS(theta0+180)] + self.canvasHeight/2;
+
+[C4Shape clearCurrentShape];
+[C4Shape addRectWithXPos:0 yPos:0 width:self.canvasWidth andHeight:self.canvasHeight];
+[C4Gradient linearGradientFromPointA:NSMakePoint(0,0)
+toPointB:NSMakePoint(0,self.canvasHeight)
+usingColorA:[C4Color colorWithRed:0.75f green:0.75f blue:0.75f]
+andColorB:[C4Color colorWithRed:0.0f green:0.0f blue:0.0f]
+inShape:[C4Shape currentShape]];
+[C4Shape clearCurrentShape];
+for(int i = 0; i < rows-1; i+=2){
+for(int j = 0; j < cols-1; j+=2){
+[C4Shape addRectWithXPos:i*rowHeight+20 yPos:j*colWidth+20 width:colWidth andHeight:rowHeight];
+}
+}
+[C4Gradient linearGradientFromPointA:p1
+toPointB:p2
+usingColorA:[C4Color colorWithRed:1.0f green:1.0f blue:1.0f]
+andColorB:[C4Color colorWithRed:0.0f green:1.0f blue:0.0f]
+inShape:[C4Shape currentShape]];
+
+[C4Shape clearCurrentShape];
+for(int i = 1; i < rows; i+=2){
+for(int j = 1; j < cols; j+=2){
+[C4Shape addRectWithXPos:i*rowHeight+20 yPos:j*colWidth+20 width:colWidth andHeight:rowHeight];
+}
+}
+[C4Gradient linearGradientFromPointA:p3
+toPointB:p4
+usingColorA:[C4Color colorWithRed:1.0f green:1.0f blue:1.0f]
+andColorB:[C4Color colorWithRed:0.0f green:0.0f blue:1.0f]
+inShape:[C4Shape currentShape]];
+
+[C4Shape clearCurrentShape];
+for(int i = 1; i < rows; i+=2){
+for(int j = 0; j < cols-1; j+=2){
+[C4Shape addRectWithXPos:i*rowHeight+20 yPos:j*colWidth+20 width:colWidth andHeight:rowHeight];
+}
+}
+[C4Gradient linearGradientFromPointA:p5
+toPointB:p6
+usingColorA:[C4Color colorWithRed:1.0f green:1.0f blue:1.0f]
+andColorB:[C4Color colorWithRed:1.0f green:0.0f blue:0.0f]
+inShape:[C4Shape currentShape]];
+
+[C4Shape clearCurrentShape];
+for(int i = 0; i < rows-1; i+=2){
+for(int j = 1; j < cols; j+=2){
+[C4Shape addRectWithXPos:i*rowHeight+20 yPos:j*colWidth+20 width:colWidth andHeight:rowHeight];
+}
+}
+[C4Gradient linearGradientFromPointA:p7
+toPointB:p8
+usingColorA:[C4Color colorWithRed:1.0f green:1.0f blue:1.0f]
+andColorB:[C4Color colorWithRed:1.0f green:1.0f blue:0]
+inShape:[C4Shape currentShape]];
+
+theta0+=increment;
+theta1+=increment*2;
+theta2+=increment*3;
+theta3+=increment*4;
+//	[C4Shape lineFromPoint:p1 toPoint:p2];
+//	[C4Shape lineFromPoint:p3 toPoint:p4];
+//	[C4Shape lineFromPoint:p5 toPoint:p6];
+//	[C4Shape lineFromPoint:p7 toPoint:p8];
+}
+
+@end

@@ -1,0 +1,19 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+C4Voice *princess;
+
+@implementation C4Canvas
+-(void)setup {
+princess = [[[C4Voice alloc] initWithVoice:PRINCESS] retain];
+[princess setVolume:0.05];
+[princess speak:@"where are my glass slippers?"];
+}
+@end

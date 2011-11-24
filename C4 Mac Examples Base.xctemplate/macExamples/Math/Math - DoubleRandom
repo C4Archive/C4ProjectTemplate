@@ -1,0 +1,40 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+int totalPoints;
+float steps;
+int randomValue;
+
+@implementation C4Canvas 
+-(void)setup {
+[self drawStyle:EVENTBASED];
+[self windowWidth:400 andHeight:320];
+[C4Shape fill:1.0f];
+
+totalPoints = self.canvasWidth;
+steps = totalPoints + 1;
+randomValue = 0;
+[self background:0];
+}
+
+-(void)draw {
+randomValue = 0;
+[self background:0];
+for(int i = 1; i < steps; i++){
+int mod = 0;
+while (mod == 0) {
+mod = [C4Math randomIntBetweenA:-1 andB:1];
+}
+[C4Shape pointAtX:self.canvasWidth/steps*i 
+Y:self.canvasHeight/2 + mod*randomValue];
+randomValue += [C4Math randomIntBetweenA:-10 andB:10];
+}
+}
+@end

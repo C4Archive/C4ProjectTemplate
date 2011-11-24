@@ -1,0 +1,18 @@
+#import "C4Canvas.h"
+
+float y = 100;
+
+@implementation C4Canvas
+
+-(void)setup {
+    [self windowWidth:400 andHeight:320];
+    [C4String fill:1.0f];
+}
+
+-(void)draw {
+    [[C4String stringWithFormat:
+      @"The canvas dimensions are: %4.2f x %4.2f", self.canvasWidth, self.canvasHeight] 
+     drawAtPoint:NSMakePoint(20, self.centerPos.y -6)];
+}
+
+@end

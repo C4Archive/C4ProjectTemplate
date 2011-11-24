@@ -1,0 +1,40 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@interface C4Canvas (private)
+-(void)recursiveCircle:(NSPoint)p radius:(int)radius level:(int)level;
+@end
+
+@implementation C4Canvas
+
+-(void)setup { 
+[self windowWidth:400 andHeight:320]; 
+[C4Shape noStroke]; 
+[self drawStyle:EVENTBASED]; 
+} 
+-(void)draw { 
+[self background:1.0f]; 
+[self recursiveCircle:NSMakePoint(200, 200) radius:160 level:8]; 
+} 
+
+-(void)recursiveCircle:(NSPoint)p radius:(int)radius level:(int)level { 
+float greyValue = 0.5 * level/6.0; 
+[C4Shape fill:greyValue alpha:0.5]; 
+[C4Shape circleAt:p radius:radius*2]; if (level > 1) {
+level--;
+int num = [C4Math randomIntBetweenA:2 andB:5];
+for(int i = 0; i < num; i++) {
+float a = [C4Math randomIntBetweenA:0 andB:TWO_PI*100]/100.0f;
+float newX = p.x + [C4Math cos:a] * 12.0 * level;
+float newY = p.y + [C4Math sin:a] * 12.0 * level;
+[self recursiveCircle:NSMakePoint(newX, newY) radius:radius/2 level:level];
+}
+}
+}
+@end

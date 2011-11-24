@@ -1,0 +1,129 @@
+//
+//  Orb.m
+//  Vulcan
+//
+//  Created by moi on 11-04-17.
+//  Copyright 2011 mediart. All rights reserved.
+//
+
+#import <Cocoa/Cocoa.h>
+
+////////////////////////////////////////////////////////////////
+// The Orb object
+////////////////////////////////////////////////////////////////
+
+@interface Orb : C4Object {
+@private
+C4Vector *location;        // XYZ coordinates of the particle.
+CGFloat theta, thetaInc;    // Angle sideways
+CGFloat phi, phiInc;        // Angle longways
+CGFloat orbSize, orbAlpha;
+C4Color *orbColor;
+}
+
+-(void)drawOrb;
+-(CGFloat)floatValue;
+-(C4Vector *)location;
+@end
+
+@implementation Orb
+
+- (id)init
+{
+self = [super init];
+if (self) {
+theta = ((CGFloat)[C4Math randomInt:1000])/100.0f;
+phi =   ((CGFloat)[C4Math randomInt:1000])/100.0f;
+
+thetaInc = ((float)[C4Math randomInt:50])/1500.0f+0.01f;
+phiInc = ((float)[C4Math randomInt:50])/1500.0f+0.01f;
+
+location = [C4Vector vectorWithX:0 Y:0 Z:0];
+
+NSInteger rand = [C4Math randomInt:2];
+//        NSInteger rand = [C4Math randomInt:3];
+switch (rand) {
+case 0:
+orbColor = [[C4Color colorWithRed:1.0f green:0.2f blue:0.2f] retain];
+break;
+case 1:
+orbColor = [[C4Color colorWithRed:0.2f green:0.4f blue:1.0f] retain];
+break;
+case 2:
+orbColor = [[C4Color colorWithRed:0.3f green:0.3f blue:0.3f] retain];
+break;
+default:
+break;
+}
+
+[self updateAutomaticallyUsingFrames:1];
+}
+
+return self;
+}
+
+- (void)dealloc
+{
+[super dealloc];
+}
+
+-(void) update {
+CGFloat sinPhi = [C4Math sin:phi];
+[location setX:120.0f*[C4Math cos:theta]*sinPhi
+Y:120.0f*[C4Math sin:theta]*sinPhi
+Z:[C4Math cos:phi]];
+theta += thetaInc;
+phi += phiInc;
+orbSize = (location.z+1.0f)*10.0f+4.0f;
+orbAlpha = (location.z + 1.0f)/4.0f+0.5f;
+}
+
+-(void)drawOrb {
+[C4Shape fill:1.0f alpha:orbAlpha];
+//[C4Shape fillColor:orbColor alpha:orbAlpha];
+[C4Shape ellipseAt:[location point2D] size:NSMakeSize(orbSize, orbSize)];
+}
+
+-(C4Vector *)location {
+return location;
+}
+
+-(CGFloat)floatValue {
+return location.z;
+}
+
+@end
+
+////////////////////////////////////////////////////////////////
+// The Canvas
+////////////////////////////////////////////////////////////////
+
+NSMutableArray *orbArray;
+
+@implementation C4Canvas
+
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self drawStyle:DISPLAYRATE];
+
+[C4Shape stroke:0.5];
+[C4Shape stroke:0 alpha:0.25];
+
+orbArray = [[[NSMutableArray alloc] initWithCapacity:0] retain];
+
+for(int i = 0; i < 30; i++) {
+[orbArray addObject:[[Orb alloc] init]];
+}
+}
+
+-(void)draw {
+[self background:0 alpha:0.05];
+[C4Transform begin];
+[C4Transform translateBy:self.centerPos];
+[C4Transform concat];
+for(Orb *o in [orbArray sortedArrayUsingFunction:basicSort context:NULL]){
+[o drawOrb];
+}
+[C4Transform end];
+}
+@end

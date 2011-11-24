@@ -1,0 +1,78 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+int fontCount, currentFont, characterIndex, size;
+NSPoint point;
+NSSize backgroundRectSize;
+NSArray *fontArray, *characterArray;
+C4String *description, *character;
+
+@implementation C4Canvas
+
+-(void)setup {
+[self drawStyle:DISPLAYRATE];
+[self windowWidth:[self screenWidth]-30 andHeight:[self screenHeight]-60];
+[self background:1];
+fontArray = [C4Font availableFonts];
+fontCount = [fontArray count];
+currentFont = 0;
+
+size = 18;
+characterArray = [[[NSArray alloc] initWithArray:
+[[C4String stringWithString:
+@"a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"]
+componentsSeparatedByString:@","]] retain];
+characterIndex = 0;
+character = [[C4String stringWithString:[characterArray objectAtIndex:characterIndex]] retain];
+
+[C4Shape noStroke];
+[description font:[C4Font fontWithFont:[C4Font userFontOfSize:12]]];
+
+point = NSMakePoint(size, size*2);
+}
+
+-(void)draw {
+[C4Shape fill:0.2];
+[C4Shape rectWithXPos:0 yPos:0 width:self.canvasWidth andHeight:26];
+
+description = [C4String stringWithFormat:@"current font: %@ (%d/%d)",
+[fontArray objectAtIndex:currentFont], 
+currentFont, 
+fontCount];
+[description fill:1];
+[description drawAtPoint:NSMakePoint(10, 6)];
+
+[C4Shape fill:1];
+[C4Shape rectAt:point size:backgroundRectSize];
+[character font:[C4Font fontWithName:[fontArray objectAtIndex:currentFont] size:size]];
+[character drawAtPoint:point];
+
+point.x += [character size].width;
+if (point.x + [character size].width >= self.canvasWidth-size) {
+point.x = size;
+point.y += size;
+if(point.y >= self.canvasHeight-size) {
+point.y = size*2;
+}
+}
+
+currentFont++;
+
+if(currentFont >= fontCount) {
+currentFont = 0;
+characterIndex++;
+if(characterIndex == [characterArray count]) characterIndex = 0;
+character = [[C4String stringWithString:[characterArray objectAtIndex:characterIndex]] retain];
+[character fillRed:FLOAT_FROM_255([C4Math randomInt:255]) 
+green:FLOAT_FROM_255([C4Math randomInt:255]) 
+blue:FLOAT_FROM_255([C4Math randomInt:255])];
+}
+}
+@end

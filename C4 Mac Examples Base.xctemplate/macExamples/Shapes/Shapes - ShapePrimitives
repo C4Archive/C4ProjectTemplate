@@ -1,0 +1,26 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self background:0];
+[C4Shape noStroke];
+[C4Shape fill:0.9f];
+[self flipCoordinates];
+}
+-(void)draw {
+[C4Shape arcWithCenterAt:NSMakePoint(235, 180) radius:25 startAngle:-45 endAngle:45];
+[C4Shape triangleFromX:10 Y:10 toX:10 Y:320 toX:45 Y:200];
+[C4Shape rectWithXPos:315 yPos:245 width:35 andHeight:35];
+[C4Shape quadFromX:105 Y:0 toX:120 Y:10 toX:120 Y:320 toX:80 Y:200];
+[C4Shape ellipseWithXPos:320 yPos:40 width:40 andHeight:40];
+[C4Shape triangleFromX:160 Y:10 toX:195 Y:320 toX:160 Y:200];
+}
+@end

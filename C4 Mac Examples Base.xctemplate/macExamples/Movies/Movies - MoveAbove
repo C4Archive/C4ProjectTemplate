@@ -1,0 +1,43 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+C4Movie *movieA, *movieB, *movieC, *movieD;
+
+@implementation C4Canvas
+
+-(void)setup {
+[self drawStyle:ANIMATED];
+[self windowWidth:400 andHeight:320];
+movieA = [C4Movie movieName:@"C4.mov"];
+movieB = [C4Movie movieName:@"C4.mov"];
+
+[movieA setX:50];
+[movieA setY:self.centerPos.y-80];
+
+[movieB setX:150];
+[movieB setY:self.centerPos.y-80];
+
+[movieA setLoops:YES];
+[movieB setLoops:YES];
+
+[movieB goToTime:2.0f];
+
+[movieA play];
+[movieB play];
+}
+
+-(void)mouseClicked {
+[movieA moveAbove:movieB];
+}
+
+-(void)mouseDoubleClicked {
+[movieB moveAbove:movieA];
+}
+@end

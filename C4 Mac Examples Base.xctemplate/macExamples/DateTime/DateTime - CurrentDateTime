@@ -1,0 +1,47 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+@implementation C4Canvas
+-(void)setup {
+[self drawStyle:DISPLAYRATE];
+[self windowWidth:400 andHeight:320];
+[C4String fill:1];
+}
+-(void)draw {
+[self background:0];
+C4String *theDate = 
+[C4String stringWithFormat:@"Today is %@ %@ the %@%@, %d",
+[C4DateTime dayName], 
+[C4DateTime monthName], 
+[C4DateTime dayString],
+[C4DateTime daySuffix],
+[C4DateTime year]];
+
+C4String *theTime = 
+[C4String stringWithFormat:@"The time is %@:%@:%@",
+[C4DateTime hourString],
+[C4DateTime minuteString],
+[C4DateTime secondString]];
+
+
+C4String *asNumbers = 
+[C4String stringWithFormat:@"%d/%d/%d - %d:%d:%d",
+[C4DateTime day],
+[C4DateTime month],
+[C4DateTime year],
+[C4DateTime hour],
+[C4DateTime minute],
+[C4DateTime second]];
+
+[theDate drawAtPoint:NSMakePoint(20, 200)];
+[theTime drawAtPoint:NSMakePoint(20, 160)];
+[asNumbers drawAtPoint:NSMakePoint(20, 120)];
+}
+@end

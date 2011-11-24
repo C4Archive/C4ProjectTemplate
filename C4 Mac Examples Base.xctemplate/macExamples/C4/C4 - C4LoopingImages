@@ -1,0 +1,48 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+C4Image *C4Red, *C4Blue, *C4Orange, *C4Black;
+NSPoint points1[4];
+
+@implementation C4Canvas
+
+-(void)setup {
+    [self windowWidth:400 andHeight:320];
+    [self drawStyle:DISPLAYRATE];
+    
+    C4Black = [C4Image imageName:@"C4Black.png"];
+    C4Black.imageMode = CENTER;
+    C4Blue = [C4Image imageName:@"C4Blue.png"];
+    C4Blue.imageMode = CENTER;
+    C4Orange = [C4Image imageName:@"C4Orange.png"];
+    C4Orange.imageMode = CENTER;
+    C4Red = [C4Image imageName:@"C4Red.png"];
+    C4Red.imageMode = CENTER;
+    
+    points1[0].x = -66.67; points1[0].y = 160;
+    points1[1].x = 66.67; points1[1].y = 160;
+    points1[2].x = 200.00; points1[2].y = 160;
+    points1[3].x = 333.33; points1[3].y = 160;
+}
+
+-(void)draw {
+    [self background:1];
+    [C4Black drawAt:points1[0] withWidth:133.33 andHeight:88.89];
+    [C4Orange drawAt:points1[1] withWidth:133.33 andHeight:88.89]; 
+    [C4Blue drawAt:points1[2] withWidth:133.33 andHeight:88.89];
+    [C4Red drawAt:points1[3] withWidth:133.33 andHeight:88.89];
+    
+    for(int i = 0; i < 4; i++) {
+        points1[i].x += mousePos.x/400.0f*133.33;
+        if(points1[i].x > 466.67) points1[i].x -= 533.33;
+    }
+}
+
+@end

@@ -1,0 +1,53 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+CGFloat x, y, angle1, angle2, segLength;
+
+@implementation C4Canvas
+
+-(void)setup {
+    [self drawStyle:DISPLAYRATE];
+    [self windowWidth:400 andHeight:320];
+    
+    x = 50.0f;
+    y = self.centerPos.y;
+    angle1 = 0.0f;
+    angle2 = 0.0f;
+    segLength = 80;
+    
+    [C4Shape strokeWidth:20.0f];
+    [C4Shape stroke:1 alpha:0.33f];
+    [C4Shape strokeCapMode:CAPROUND];
+}
+
+-(void)draw {
+    [self background:0 alpha:0.05f];
+    angle1 = (mousePos.x/self.canvasWidth-0.5f)*-1*(CGFloat)PI;
+    angle2 = (mousePos.y/self.canvasHeight-0.5f)*(CGFloat)PI;
+    
+    [C4Transform begin];
+    
+    [C4Transform translateBy:NSMakePoint(x, y)];
+    
+    [C4Transform rotateByAngle:angle1];
+    [C4Transform concat];
+    [C4Shape lineFromX:0 Y:0 toX:segLength Y:0];
+    [C4Transform end];
+    
+    [C4Transform begin];
+    [C4Transform translateBy:NSMakePoint(x, y)];
+    [C4Transform rotateByAngle:angle1];
+    [C4Transform translateBy:NSMakePoint(segLength, 0)];
+    [C4Transform rotateByAngle:angle2];
+    [C4Transform concat];
+    [C4Shape lineFromX:0 Y:0 toX:segLength Y:0];
+    [C4Transform end];
+}
+@end

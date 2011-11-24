@@ -1,0 +1,48 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+#import "C4Canvas.h"
+@interface C4Canvas () {}
+-(void)openGLDrawRect:(NSRect)destRect;
+-(NSRect)convertRectToOpenGLCoords:(NSRect)aRect;
+@end
+
+@implementation C4Canvas
+
+-(void)setup {
+[self drawStyle:DISPLAYRATE];
+[self windowWidth:400 andHeight:320];
+}
+
+-(void)draw {
+[self background:0 alpha:0.01];
+[self openGLDrawRect:NSMakeRect(mousePos.x/2, mousePos.y/2,mousePos.x, mousePos.y)];
+[C4Shape circleAt:mousePos radius:5];
+}
+
+-(NSRect)convertRectToOpenGLCoords:(NSRect)aRect {
+CGFloat newX = aRect.origin.x*2/self.canvasWidth-1;
+CGFloat newY = aRect.origin.y*2/self.canvasHeight-1;
+CGFloat newW = aRect.size.width*2/self.canvasWidth;
+CGFloat newH = aRect.size.height*2/self.canvasHeight;
+return NSMakeRect(newX, newY, newW, newH);
+}
+
+-(void)openGLDrawRect:(NSRect)destRect {
+destRect = [self convertRectToOpenGLCoords:destRect];
+glLineWidth(1);
+glColor4f(1.0, 0, 0, 1.0f);
+glBegin(GL_LINE_STRIP);      
+glVertex2f(destRect.origin.x, destRect.origin.y);
+glVertex2f(destRect.origin.x + destRect.size.width, destRect.origin.y);
+glVertex2f(destRect.origin.x + destRect.size.width, destRect.origin.y+destRect.size.height);
+glVertex2f(destRect.origin.x,  destRect.origin.y+destRect.size.height);
+glVertex2f(destRect.origin.x, destRect.origin.y);
+glEnd();
+}
+
+@end

@@ -1,0 +1,169 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+}
+
+-(void)draw {
+[self background:0];
+[C4String fill:1.0f];
+/*
+The NSMutableArray stores lists of objects which can be changed...
+Objects can be of any kind (class)...
+*/
+
+//Let's create a bunch of objects
+C4Color *c = [C4Color colorWithGrey:.66];
+C4Font *f = [C4Font fontWithName:@"Arial" size:20];
+C4Image *i = [C4Image imageName:@"C4Red.png"];
+C4String *s = [C4String stringWithString:@"a string"];
+C4Voice *v	= [C4Voice initWithVoice:ALEX];
+C4Vector *vec = [C4Vector vectorWithX:0 Y:1 Z:0];
+C4Object *o = [[[C4Object alloc] init] retain];
+
+NSMutableArray *array0, *array1, *array2;
+C4Log(@"------------------------------------------------");
+C4Log(@"Create an array, add one object");
+array0 = [NSMutableArray arrayWithCapacity:0];
+[array0 addObject:c];
+C4Log(@"%@ \n",array0);
+
+C4String *currentString = [C4String stringWithString:@"Initial Array"];
+
+NSPoint p = NSMakePoint(20, self.canvasHeight-32);
+[currentString drawAtPoint:p];
+
+currentString = [C4String stringWithFormat:@"%@",array0];
+p.y -= 60;
+[currentString drawAtPoint:p];
+
+
+C4Log(@"------------------------------------------------");
+C4Log(@"Add another object");
+[array0 addObject:f];
+C4Log(@"%@ \n",array0);
+
+C4Log(@"------------------------------------------------");
+C4Log(@"Create an array, add multiple objects");
+array1 = [NSMutableArray arrayWithCapacity:0];
+[array1 addObject:c];
+[array1 addObject:f];
+[array1 addObject:i];
+[array1 addObject:s];
+[array1 addObject:v];
+[array1 addObject:vec];
+[array1 addObject:o];
+C4Log(@"%@ \n",array1);
+
+C4Log(@"------------------------------------------------");
+C4Log(@"Access various objects");
+C4Log(@"Number of objects in array:%d",[array1 count]);
+C4Log(@"object 1: %@",[array1 objectAtIndex:0]);
+C4Log(@"object 3: %@",[array1 objectAtIndex:3]);
+C4Log(@"last obj: %@ \n",[array1 lastObject]);
+
+C4Log(@"------------------------------------------------");
+C4Log(@"Remove a specific object");
+[array1 removeObjectAtIndex:0];
+C4Log(@"Number of objects in array:%d",[array1 count]);
+C4Log(@"object 1: %@",[array1 objectAtIndex:0]);
+C4Log(@"object 3: %@",[array1 objectAtIndex:3]);
+C4Log(@"last obj: %@ \n",[array1 lastObject]);
+
+
+C4Log(@"------------------------------------------------");
+C4Log(@"Remove last object");
+[array1 removeLastObject];
+C4Log(@"Number of objects in array:%d",[array1 count]);
+C4Log(@"object 1: %@",[array1 objectAtIndex:0]);
+C4Log(@"object 3: %@",[array1 objectAtIndex:3]);
+C4Log(@"last obj: %@ \n",[array1 lastObject]);
+
+C4Log(@"------------------------------------------------");
+C4Log(@"Add object");
+[array1 addObject:c];
+C4Log(@"Number of objects in array:%d",[array1 count]);
+C4Log(@"object 1: %@",[array1 objectAtIndex:0]);
+C4Log(@"object 3: %@",[array1 objectAtIndex:3]);
+C4Log(@"last obj: %@ \n",[array1 lastObject]);
+
+C4Log(@"------------------------------------------------");
+C4Log(@"Add objects");
+[array1 addObject:c];
+[array1 addObject:c];
+[array1 addObject:c];
+[array1 addObject:c];
+[array1 addObject:c];
+[array1 addObject:c];
+[array1 addObject:c];
+[array1 addObject:c];
+C4Log(@"Number of objects in array:%d",[array1 count]);
+C4Log(@"%@ \n",array1);
+
+C4Log(@"------------------------------------------------");
+C4Log(@"Add object at index");
+[array1 insertObject:vec atIndex:10];
+C4Log(@"Number of objects in array:%d",[array1 count]);
+C4Log(@"%@ \n",array1);
+
+C4Log(@"------------------------------------------------");
+C4Log(@"Replacing an object");
+[array1 replaceObjectAtIndex:10 withObject:o];
+C4Log(@"Number of objects in array:%d",[array1 count]);
+C4Log(@"%@ \n",array1);
+
+C4Log(@"------------------------------------------------");
+C4Log(@"Exchanging an object");
+[array1 exchangeObjectAtIndex:10 withObjectAtIndex:0];
+C4Log(@"Number of objects in array:%d",[array1 count]);
+C4Log(@"%@ \n",array1);
+
+C4Log(@"------------------------------------------------");
+C4Log(@"Remove Identical Objects");
+[array1 removeObjectIdenticalTo:c];
+C4Log(@"Number of objects in array:%d",[array1 count]);
+C4Log(@"%@ \n",array1);
+
+C4Log(@"------------------------------------------------");
+C4Log(@"Adding Objects From Another Array");
+[array1 addObjectsFromArray:array0];
+C4Log(@"Number of objects in array:%d",[array1 count]);
+C4Log(@"%@ \n",array1);
+
+C4Log(@"------------------------------------------------");
+C4Log(@"Adding Two Arrays into One");
+array2 = [NSMutableArray arrayWithCapacity:0];
+[array2 addObjectsFromArray:array0];
+[array2 addObjectsFromArray:array1];
+C4Log(@"Number of objects in array:%d",[array2 count]);
+C4Log(@"%@ \n",array2);
+
+C4Log(@"------------------------------------------------");
+C4Log(@"Removing Objects From Another Array");
+[array2 removeObjectsInArray:array0];
+C4Log(@"Number of objects in array:%d",[array2 count]);
+C4Log(@"%@ \n",array2);
+
+
+currentString = [C4String stringWithString:@"Final Array"];
+p.y -= 32;
+[currentString drawAtPoint:p];
+
+currentString = [C4String stringWithFormat:@"%@",array2];
+p.y -= 132;
+[currentString drawAtPoint:p];
+
+/*
+There are a few more advanced functions for manipulating NSMutableArray objects
+Have a look at Apple's documentation for these methods
+*/
+}
+@end

@@ -1,0 +1,104 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@interface C4Canvas (private)
+-(float)sinGraph:(float)value;
+-(float)quad:(float)value;
+-(float)quadHump:(float)value;
+-(float)hump:(float)value;
+-(float)squared:(float)value;
+@end
+
+
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self background:0];
+[C4Shape noFill];
+[C4Shape strokeWidth:1];
+}
+
+-(void)draw {
+[C4Shape stroke:0.2f];
+[C4Shape beginShape];
+for(int i = 0; i < self.canvasWidth; i++) {
+float value = [self sinGraph:((float)i/self.canvasWidth)]*self.canvasHeight;
+[C4Shape vertexAtX:i Y:value];
+}
+[C4Shape endShape];
+
+[C4Shape stroke:0.4f];
+[C4Shape beginShape];
+for(int i = 0; i < self.canvasWidth; i++) {
+float value = [self quad:((float)i)/self.canvasWidth]*self.canvasHeight;
+[C4Shape vertexAtX:i Y:value];
+}
+[C4Shape endShape];
+
+[C4Shape stroke:0.6f];
+[C4Shape beginShape];
+for(int i = 0; i < self.canvasWidth; i++) {
+float value = [self quadHump:((float)i)/self.canvasWidth]*self.canvasHeight;
+[C4Shape vertexAtX:i Y:value];
+}
+[C4Shape endShape];
+
+[C4Shape stroke:0.8f];
+[C4Shape beginShape];
+for(int i = 0; i < self.canvasWidth; i++) {
+float value = [self hump:((float)i)/self.canvasWidth]*self.canvasHeight;
+[C4Shape vertexAtX:i Y:value];
+}
+[C4Shape endShape];
+
+[C4Shape stroke:1.0f];
+[C4Shape beginShape];
+for(int i = 0; i < self.canvasWidth; i++) {
+float value = [self squared:((float)i)/self.canvasWidth]*self.canvasHeight;
+[C4Shape vertexAtX:i Y:value];
+}
+[C4Shape endShape];
+}
+
+-(float)sinGraph:(float)value {
+value = (value - 0.5) * 1.0; //scale from -1 to 1
+value = [C4Math sin:(value*PI)]/2 + 0.5;
+return value;
+}
+
+-(float)squared:(float)value {
+value = [C4Math pow:value raiseTo:2];
+// Following line is equal to the above line
+// value = value * value;
+return value;
+}
+
+-(float)quad:(float)value {
+value = [self squared:[self squared:value]];
+// Following line is equal to the above line
+// value = value * value * value * value;
+return value;
+}
+
+-(float)quadHump:(float)value {
+value = (value - 0.5) * 2; // scale from -2 to 2
+value = [self quad:value] * 16;
+return value;
+}
+
+-(float)hump:(float)value {
+value = (value - 0.5) * 2; // scale from -2 to 2
+value = [self squared:value];
+
+if(value > 1) {
+value = 1;
+}
+return 1 - value;
+}
+@end

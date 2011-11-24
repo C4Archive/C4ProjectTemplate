@@ -1,0 +1,140 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import <Cocoa/Cocoa.h>
+
+@interface C4Path : C4Object {
+NSPoint points[0];
+NSPoint tempPoints[1000];
+NSInteger currentPointCount, totalPoints;
+BOOL finalized;
+}
+
+-(void)addPoint:(NSPoint)p;
+-(void)finalizePath;
+-(NSPoint)currentPoint;
+-(NSPoint *)allPoints;
+-(NSInteger)totalPointCount;
+@end
+
+@implementation C4Path 
+-(id)init {
+self = [super init];
+if(self != nil) {
+currentPointCount = 0;
+totalPoints = 1000;
+finalized = NO;
+}
+return self;
+}
+
+-(void)addPoint:(NSPoint)p {
+tempPoints[currentPointCount].x = p.x;
+tempPoints[currentPointCount].y = p.y;
+currentPointCount++;
+
+if(currentPointCount == totalPoints) {
+totalPoints += 1000;
+NSPoint newTempPoints[totalPoints];
+for(int i = 0; i < 1000; i++) {
+newTempPoints[i] = tempPoints[i];
+}
+memcpy(newTempPoints, tempPoints, currentPointCount);
+}
+}
+
+-(NSPoint *)allPoints {
+if(finalized) {
+return points;
+}
+return tempPoints;
+}
+
+-(void)finalizePath {
+finalized = YES;
+memcpy(tempPoints, points, currentPointCount);
+}
+
+-(NSPoint)currentPoint {
+if(currentPointCount > 0) {
+if(finalized == YES)
+return points[currentPointCount-1];
+else
+return tempPoints[currentPointCount-1];
+}
+return NSZeroPoint;
+}
+
+-(NSInteger)totalPointCount {
+return currentPointCount;
+}
+
+@end
+
+@interface C4Canvas (){}
+-(void)saveAndClearPath;
+@end
+
+@implementation C4Canvas
+
+NSMutableArray *sketch;
+C4Path *currentPath;
+
+-(void)setup {
+[self drawStyle:EVENTBASED];
+[self windowWidth:800 andHeight:600];
+[C4Shape stroke:0 alpha:0.5];
+[C4Shape noFill];
+[C4Shape strokeWidth:10];
+[C4Shape strokeCapMode:CAPROUND];
+[C4Shape strokeJoinMode:JOINROUND];
+sketch = [[[NSMutableArray alloc] initWithCapacity:0] retain];
+}
+
+-(void)draw {
+[self background:1];
+for(C4Path *path in sketch) {
+[C4Shape beginShape];
+[C4Shape vertices:[path allPoints] length:[path totalPointCount]];
+[C4Shape endShape];
+}
+if(currentPath != nil && [currentPath totalPointCount] > 1) {
+[C4Shape beginShape];
+[C4Shape vertices:[currentPath allPoints] length:[currentPath totalPointCount]];
+[C4Shape endShape];
+}
+}
+
+-(void)mousePressed {
+if(currentPath != nil) {
+[self saveAndClearPath];
+}
+currentPath = [[[C4Path alloc] init] retain];
+}
+
+-(void)mouseDragged {
+if(currentPath != nil) {
+if([C4Vector distanceBetweenA:[currentPath currentPoint] andB:mousePos] > 0.0)           
+[currentPath addPoint:mousePos];
+}
+}
+
+-(void)mouseReleased {
+if(currentPath != nil) {
+[self saveAndClearPath];
+}
+}
+
+-(void)saveAndClearPath {
+if([currentPath totalPointCount] > 1) {
+[currentPath finalizePath];
+[sketch addObject:currentPath];
+}
+currentPath = nil;
+}
+@end

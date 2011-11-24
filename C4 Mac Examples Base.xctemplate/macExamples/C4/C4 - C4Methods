@@ -1,0 +1,132 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+@interface C4Canvas () {}
+-(void)drawVerticalLineFrom:(NSPoint)startingPoint steps:(NSInteger)steps gap:(NSInteger)gap;
+-(void)drawHorizontalLineFrom:(NSPoint)startingPoint steps:(NSInteger)steps gap:(NSInteger)gap;
+@end
+
+@implementation C4Canvas
+
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+}
+
+-(void)draw {
+//C
+NSPoint startingPoint = NSZeroPoint;
+
+[C4Shape fillRed:1.0f green:0.2f blue:0.2f];
+
+startingPoint.x = 80; startingPoint.y = 80;
+[self drawVerticalLineFrom:startingPoint steps:32 gap:5];
+
+startingPoint.x = 80; startingPoint.y = 240;
+[self drawHorizontalLineFrom:startingPoint steps:24 gap:5];
+
+startingPoint.x = 200; startingPoint.y = 240;
+[self drawVerticalLineFrom:startingPoint steps:8 gap:-5];
+
+startingPoint.x = 200; startingPoint.y = 200;
+[self drawHorizontalLineFrom:startingPoint steps:16 gap:-5];
+
+startingPoint.x = 120; startingPoint.y = 200;
+[self drawVerticalLineFrom:startingPoint steps:16 gap:-5];
+
+startingPoint.x = 120; startingPoint.y = 120;
+[self drawHorizontalLineFrom:startingPoint steps:16 gap:5];
+
+startingPoint.x = 200; startingPoint.y = 120;
+[self drawVerticalLineFrom:startingPoint steps:8 gap:-5];
+
+startingPoint.x = 200; startingPoint.y = 80;
+[self drawHorizontalLineFrom:startingPoint steps:24 gap:-5];
+
+//4
+[C4Shape fillRed:0.2f green:0.4f blue:1.0f];
+
+startingPoint.x = 160; startingPoint.y = 240;
+[self drawHorizontalLineFrom:startingPoint steps:8 gap:5];
+
+startingPoint.x = 200; startingPoint.y = 240;
+[self drawVerticalLineFrom:startingPoint steps:16 gap:-5];
+
+startingPoint.x = 200; startingPoint.y = 160;
+[self drawHorizontalLineFrom:startingPoint steps:8 gap:5];
+
+startingPoint.x = 240; startingPoint.y = 160;
+[self drawVerticalLineFrom:startingPoint steps:16 gap:5];
+
+startingPoint.x = 240; startingPoint.y = 240;
+[self drawHorizontalLineFrom:startingPoint steps:8 gap:5];
+
+startingPoint.x = 280; startingPoint.y = 240;
+[self drawVerticalLineFrom:startingPoint steps:16 gap:-5];
+
+startingPoint.x = 280; startingPoint.y = 160;
+[self drawHorizontalLineFrom:startingPoint steps:8 gap:5];
+
+startingPoint.x = 320; startingPoint.y = 160;
+[self drawVerticalLineFrom:startingPoint steps:8 gap:-5];
+
+startingPoint.x = 320; startingPoint.y = 120;
+[self drawHorizontalLineFrom:startingPoint steps:8 gap:-5];
+
+startingPoint.x = 280; startingPoint.y = 120;
+[self drawVerticalLineFrom:startingPoint steps:8 gap:-5];
+
+startingPoint.x = 280; startingPoint.y = 80;
+[self drawHorizontalLineFrom:startingPoint steps:8 gap:-5];
+
+startingPoint.x = 240; startingPoint.y = 80;
+[self drawVerticalLineFrom:startingPoint steps:8 gap:5];
+
+startingPoint.x = 240; startingPoint.y = 120;
+[self drawHorizontalLineFrom:startingPoint steps:16 gap:-5];
+
+startingPoint.x = 160; startingPoint.y = 120;
+[self drawVerticalLineFrom:startingPoint steps:24 gap:5];
+
+//Square
+[C4Shape fillRed:0.3f green:0.3f blue:0.3f];
+
+startingPoint.x = 160; startingPoint.y = 240;
+[self drawHorizontalLineFrom:startingPoint steps:8 gap:5];
+
+startingPoint.x = 200; startingPoint.y = 240;
+[self drawVerticalLineFrom:startingPoint steps:8 gap:-5];
+
+startingPoint.x = 200; startingPoint.y = 200;
+[self drawHorizontalLineFrom:startingPoint steps:8 gap:-5];
+
+startingPoint.x = 160; startingPoint.y = 200;
+[self drawVerticalLineFrom:startingPoint steps:8 gap:5];
+
+}
+
+-(void)drawVerticalLineFrom:(NSPoint)startingPoint steps:(NSInteger)steps gap:(NSInteger)gap {
+NSPoint currentPoint = startingPoint;
+for(int i = 0; i <= steps; i ++) {
+currentPoint.x = startingPoint.x;
+currentPoint.y = startingPoint.y + i*gap;
+[C4Shape pointAt:currentPoint];
+}
+}
+
+-(void)drawHorizontalLineFrom:(NSPoint)startingPoint steps:(NSInteger)steps gap:(NSInteger)gap {
+NSPoint currentPoint = startingPoint;
+for(int i = 0; i <= steps; i ++) {
+currentPoint.x = startingPoint.x + i*gap;
+currentPoint.y = startingPoint.y;
+[C4Shape pointAt:currentPoint];
+}
+}
+
+@end

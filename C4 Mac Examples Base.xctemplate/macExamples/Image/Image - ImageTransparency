@@ -1,0 +1,28 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+C4Image *background, *foreground;
+float offset;
+
+@implementation C4Canvas
+-(void)setup {
+[self drawStyle:ANIMATED];
+[self windowWidth:400 andHeight:320];
+background = [C4Image imageName:@"C4Wood.png"];
+foreground = [C4Image imageName:@"C4Sky.png"];
+}
+-(void)draw {
+[self backgroundImage:background];
+[foreground drawAt:NSMakePoint(mousePos.x-400, 80) 
+withWidth:800 
+andHeight:160 
+withAlpha:0.66];
+}
+@end

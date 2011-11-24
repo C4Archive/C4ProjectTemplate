@@ -1,0 +1,47 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import <Cocoa/Cocoa.h>
+
+@implementation C4Canvas
+
+C4Font *yourUserFont, *yourBoldFont, *yourMessageFont, *yourSystemFont;
+
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+
+yourUserFont = [[C4Font userFontOfSize:16] retain];
+yourBoldFont = [[C4Font boldSystemFontOfSize:16] retain];
+yourMessageFont = [[C4Font messageFontOfSize:16] retain];
+yourSystemFont = [[C4Font systemFontOfSize:16] retain];
+}
+
+-(void)draw {
+[C4String fill:1.0f];
+
+[C4String font:yourUserFont];    
+C4String *currentString = [C4String stringWithFormat:
+@"Your User Font is: %@", [yourUserFont fontName]];
+[currentString drawAtPoint:NSMakePoint(20, self.canvasHeight/5*4)];
+
+[C4String font:yourBoldFont];
+currentString = [C4String stringWithFormat:@"Your Bold Font is: %@", 
+[yourBoldFont fontName]];
+[currentString drawAtPoint:NSMakePoint(20, self.canvasHeight/5*3)];
+
+[C4String font:yourMessageFont];
+currentString = [C4String stringWithFormat:@"Your Message Font is: %@", 
+[yourMessageFont fontName]];
+[currentString drawAtPoint:NSMakePoint(20, self.canvasHeight/5*2)];
+
+[C4String font:yourSystemFont];
+currentString = [C4String stringWithFormat:@"Your System Font is: %@", 
+[yourSystemFont fontName]];
+[currentString drawAtPoint:NSMakePoint(20, self.canvasHeight/5*1)];
+}
+@end

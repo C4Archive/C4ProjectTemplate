@@ -1,0 +1,64 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@interface C4Canvas (private)
+-(void)calcWave;
+-(void)renderWave;
+@end
+
+int xspacing = 8;
+int w = 416;
+int maxwaves = 6;
+float theta = 0.0f;
+float amplitude[6];
+float dx[6];
+float yValueCount = 51;
+float yValues[51];
+
+@implementation C4Canvas
+-(void)setup {
+[self drawStyle:ANIMATED];
+[self windowWidth:400 andHeight:320];
+for(int i = 0; i < maxwaves; i++) {
+amplitude[i] = [C4Math randomIntBetweenA:10 andB:30];
+float period = [C4Math randomIntBetweenA:100 andB:300];
+dx[i] = (TWO_PI / (float)period) * xspacing;
+}
+}
+-(void)draw {
+[self background:0];
+[self calcWave];
+[self renderWave];
+}
+-(void)calcWave {
+theta += 0.02;
+for(int i = 0; i < yValueCount; i++) {
+yValues[i] = 0;
+}
+for(int j = 0; j < maxwaves; j++) {
+float x = theta;
+for(int i = 0; i < yValueCount; i++) {
+if(j%2 == 0){
+yValues[i] += [C4Math sin:x]*amplitude[j];
+}
+else {
+yValues[i] += [C4Math cos:x]*amplitude[j];
+}
+x += dx[j];
+}
+}
+}
+-(void)renderWave {
+[C4Shape noStroke];
+[C4Shape fill:1.0f alpha:0.6f];
+for(int x = 0; x < yValueCount; x++) {
+[C4Shape ellipseWithXPos:x*xspacing yPos:self.canvasWidth/2+yValues[x] width:16 andHeight:16];
+}
+}
+@end

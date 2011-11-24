@@ -1,0 +1,21 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+C4Image *myImage;
+
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+myImage = [C4Image imageName:@"C4Wood" andType:@"png"];
+}
+-(void)draw {
+[myImage drawAt:NSZeroPoint];
+}
+@end

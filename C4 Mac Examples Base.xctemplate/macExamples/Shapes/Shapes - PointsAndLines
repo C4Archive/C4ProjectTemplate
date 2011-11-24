@@ -1,0 +1,40 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@implementation C4Canvas
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self background:0.0f];
+}
+-(void)draw {
+int d = 66;
+int p1 = d;
+int p2 = p1+d;
+int p3 = p2+d;
+int p4 = p3+d;
+[C4Shape stroke:0.6f];
+// Draw gray box
+[C4Transform begin];
+[C4Transform translateByX:33 andY:0];
+[C4Transform concat];
+[C4Shape lineFromX:p3 Y:p3 toX:p2 Y:p3];
+[C4Shape lineFromX:p2 Y:p3 toX:p2 Y:p2];
+[C4Shape lineFromX:p2 Y:p2 toX:p3 Y:p2];
+[C4Shape lineFromX:p3 Y:p2 toX:p3 Y:p3];
+
+[C4Shape fill:1.0f];
+[C4Shape pointAtX:p1 Y:p1];
+[C4Shape pointAtX:p1 Y:p3];
+[C4Shape pointAtX:p2 Y:p4];
+[C4Shape pointAtX:p3 Y:p1];
+[C4Shape pointAtX:p4 Y:p2];
+[C4Shape pointAtX:p4 Y:p4];
+[C4Transform end];
+}
+@end

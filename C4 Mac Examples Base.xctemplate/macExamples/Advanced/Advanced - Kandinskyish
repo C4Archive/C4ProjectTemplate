@@ -1,0 +1,282 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+@implementation C4Canvas
+-(void)setup {
+	[self windowWidth:600 andHeight:400];
+	[self background:1.0f];
+	[C4Shape stroke];
+}
+-(void)draw {
+	[self backgroundRed:0.945 green:0.88 blue:0.72];
+	[self drawBackground];
+	
+	//GRADIENTS
+	[C4Shape clearCurrentShape];
+	[C4Shape addTriangleFromX:108 Y:208.5 toX:200.5 Y:305 toX:365 Y:161];
+	[C4Gradient linearGradientFromPointA:NSMakePoint(255,385)
+								 toPointB:NSMakePoint(205,205)
+							  usingColorA:[C4Color colorWithRed:0.36f green:0.68f blue:0.85f]
+								andColorB:[C4Color colorWithRed:0.36f green:0.68f blue:0.85f alpha:0.0f]
+								  inShape:[C4Shape currentShape]];
+	
+	[C4Shape clearCurrentShape];
+	[C4Shape addTriangleFromX:255.5 Y:40 toX:359 Y:402.5 toX:470 Y:20.5];
+	[C4Gradient linearGradientFromPointA:NSMakePoint(0,self.canvasHeight)
+								 toPointB:NSMakePoint(0,150)
+							  usingColorA:[C4Color colorWithRed:1.0f green:1.0f blue:1.0f]
+								andColorB:[C4Color colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.0f]
+								  inShape:[C4Shape currentShape]];
+	
+	[C4Shape noStroke];
+	[C4Shape fill];
+	//CIRCLES
+	[C4Shape fillRed:0.78 green:0.42 blue:0.3];
+	[C4Shape circleAt:NSMakePoint(70, 330) radius:75];
+	
+	[C4Shape fillRed:0.87 green:0.55 blue:0.5 alpha:0.9];
+	[C4Shape circleAt:NSMakePoint(70, 330) radius:69];
+	
+	[C4Shape fillRed:0.68 green:.08 blue:0];
+	[C4Shape circleAt:NSMakePoint(118, 268) radius:24];
+	
+	[C4Shape fill:0];
+	[C4Shape circleAt:NSMakePoint(70, 330) radius:60];
+	
+	[C4Shape fillRed:0.325 green:0.185 blue:0.35];
+	[C4Shape circleAt:NSMakePoint(70, 330) radius:29];
+	
+	[C4Shape fillRed:0.41 green:0.59 blue:0.8 alpha:.8];
+	[C4Shape circleAt:NSMakePoint(60, 112) radius:33];
+	
+	[C4Shape stroke];
+	[C4Shape fillRed:0.91 green:0.7 blue:.235];
+	[C4Shape circleAt:NSMakePoint(60, 112) radius:21];
+	
+	[C4Shape noStroke];
+	[C4Shape fillRed:0.96 green:0.84 blue:0.37];
+	[C4Shape circleAt:NSMakePoint(225.5, 44.5) radius:26];
+	
+	[C4Shape fillRed:0.92 green:0.65 blue:0.5];
+	[C4Shape circleAt:NSMakePoint(224, 44.5) radius:18.5];
+	
+	[C4Shape strokeWidth:0.5];
+	[C4Shape stroke];
+	[C4Shape fillRed:0.24 green:0.5 blue:0.64];
+	[C4Shape circleAt:NSMakePoint(222.5, 46.5) radius:16.5];
+	
+	[C4Shape strokeWidth:0.5];
+	[C4Shape fill:1];
+	[C4Shape circleAt:NSMakePoint(299, 283.5) radius:20.5];
+	
+	[C4Shape strokeWidth:4];
+	[C4Shape circleAt:NSMakePoint(299, 283.5) radius:13];
+	
+	[C4Shape strokeWidth:1.5];
+	[C4Shape fillRed:0.68 green:.08 blue:0];
+	[C4Shape circleAt:NSMakePoint(297, 326) radius:5];
+	
+	[C4Shape strokeWidth:0.25];
+	[C4Shape fillRed:0.24 green:0.50 blue:0.64];
+	[C4Shape circleAt:NSMakePoint(329, 373) radius:7.5];
+	
+	[C4Shape fill:1];
+	[C4Shape strokeWidth:0.75];
+	[C4Shape circleAt:NSMakePoint(358, 307) radius:7.25];
+	
+	[C4Shape strokeWidth:1];
+	[C4Shape fillRed:0.84 green:0.88 blue:0.83];
+	[C4Shape circleAt:NSMakePoint(398, 350.5) radius:10.5];
+	
+	[C4Shape noStroke];
+	[C4Shape fillRed:0.32 green:0.41 blue:0.596];
+	[C4Shape circleAt:NSMakePoint(398, 350.5) radius:7.75];
+	
+	[C4Shape fillRed:0.68 green:0.36 blue:0.165];
+	[C4Shape circleAt:NSMakePoint(469, 321) radius:18];
+	[C4Shape stroke];
+	[C4Shape fillRed:0.9 green:0.66 blue:0.2 alpha:0.5];
+	[C4Shape circleAt:NSMakePoint(461, 321) radius:19.5];
+	
+	[C4Shape strokeWidth:0.25];
+	[C4Shape fillRed:0.89 green:0.835 blue:0.38];
+	[C4Shape circleAt:NSMakePoint(534, 336) radius:13.5];
+	[C4Shape fillRed:0.46 green:0.71 blue:0.8];
+	[C4Shape circleAt:NSMakePoint(534.833, 335) radius:11.75];
+	
+	[C4Shape strokeWidth:1];
+	[C4Shape fill:1];
+	[C4Shape circleAt:NSMakePoint(578, 324) radius:12.5];
+	
+	[C4Shape noStroke];
+	[C4Shape fillRed:0.79 green:0.25 blue:0.18];
+	[C4Shape circleAt:NSMakePoint(536, 300) radius:13.5];
+	[C4Shape fillRed:0.71 green:0.655 blue:0.65];
+	[C4Shape circleAt:NSMakePoint(535, 301) radius:12.5];
+	
+	[C4Shape strokeWidth:0.25];
+	[C4Shape stroke];
+	[C4Shape fillRed:0.195 green:0.49 blue:0.635];
+	[C4Shape circleAt:NSMakePoint(483, 231) radius:19];
+	
+	[C4Shape fillRed:0.533 green:0.45 blue:0.62];
+	[C4Shape circleAt:NSMakePoint(449, 89) radius:16.75];
+	
+	[C4Shape fillRed:0.6 green:0.63 blue:0.47];
+	[C4Shape circleAt:NSMakePoint(518.5, 59.5) radius:29.5];
+	
+	//ARCS
+	[C4Shape fill];
+	[C4Shape fill:1 alpha:0.7];
+	[C4Shape strokeWidth:3];
+	[C4Shape strokeRed:0.67 green:0.68 blue:0.65];
+	[C4Shape arcWithCenterAt:NSMakePoint(280, 140) radius:25.5 startAngle:0 endAngle:180];
+	[C4Shape noFill];
+	[C4Shape strokeWidth:1];
+	[C4Shape stroke:0];
+	[C4Shape arcWithCenterAt:NSMakePoint(280, 140) radius:27 startAngle:0 endAngle:180];
+	
+	[C4Shape fill];
+	[C4Shape fill:1 alpha:0.7];
+	[C4Shape strokeWidth:3];
+	[C4Shape strokeRed:0.96 green:0.90 blue:0.51];
+	[C4Shape arcWithCenterAt:NSMakePoint(335, 140) radius:25.5 startAngle:0 endAngle:180];
+	[C4Shape noFill];
+	[C4Shape strokeWidth:1];
+	[C4Shape stroke:0];
+	[C4Shape arcWithCenterAt:NSMakePoint(335, 140) radius:27 startAngle:0 endAngle:180];
+	
+	[C4Shape fill];
+	[C4Shape fill:1 alpha:0.7];
+	[C4Shape strokeWidth:3];
+	[C4Shape strokeRed:0.85 green:0.345 blue:0.18];
+	[C4Shape arcWithCenterAt:NSMakePoint(390, 140) radius:25.5 startAngle:0 endAngle:180];
+	[C4Shape noFill];
+	[C4Shape strokeWidth:1];
+	[C4Shape stroke:0];
+	[C4Shape arcWithCenterAt:NSMakePoint(390, 140) radius:27 startAngle:0 endAngle:180];
+	
+	[C4Shape arcWithCenterAt:NSMakePoint(443, 140) radius:25.5 startAngle:0 endAngle:180];
+	
+	[C4Shape arcWithCenterAt:NSMakePoint(305.5, 112.5) radius:25.5 startAngle:0 endAngle:180];
+	[C4Shape arcWithCenterAt:NSMakePoint(356.5, 112.5) radius:25.5 startAngle:0 endAngle:180];
+	
+	[C4Shape arcWithCenterAt:NSMakePoint(382, 84.5) radius:25.5 startAngle:0 endAngle:180];
+	
+	[C4Shape arcWithCenterAt:NSMakePoint(407.5, 56.5) radius:25.5 startAngle:0 endAngle:180];
+	
+	[C4Shape arcWithCenterAt:NSMakePoint(420, 377) radius:9 startAngle:90 endAngle:270];
+	
+	//ARCS
+	[C4Shape strokeWidth:2];
+	[C4Shape strokeRed:0.78 green:0.36 blue:0.46];
+	[C4Shape arcWithCenterAt:NSMakePoint(360.66, 227.5) radius:17.5 startAngle:43 endAngle:223];
+	[C4Shape stroke:0];
+	[C4Shape strokeWidth:1];
+	[C4Shape arcWithCenterAt:NSMakePoint(360.66, 227.5) radius:16.5 startAngle:43 endAngle:223];
+	
+	[C4Shape strokeWidth:2];
+	[C4Shape strokeRed:0.82 green:0.05 blue:0.17];
+	[C4Shape arcWithCenterAt:NSMakePoint(386.5, 251.5) radius:16.25 startAngle:43 endAngle:223];
+	[C4Shape stroke:0];
+	[C4Shape strokeWidth:1];
+	[C4Shape arcWithCenterAt:NSMakePoint(386.5, 251.5) radius:15.25 startAngle:43 endAngle:223];
+	
+	
+	[C4Shape strokeWidth:2];
+	[C4Shape strokeRed:0.82 green:0.05 blue:0.17];
+	[C4Shape arcWithCenterAt:NSMakePoint(410.25, 273.5) radius:15 startAngle:43 endAngle:223];
+	[C4Shape stroke:0];
+	[C4Shape strokeWidth:1];
+	[C4Shape arcWithCenterAt:NSMakePoint(410.25, 273.5) radius:14 startAngle:43 endAngle:223];
+	
+	[C4Shape strokeWidth:1.5];
+	[C4Shape strokeRed:0.78 green:0.36 blue:0.46];
+	[C4Shape arcWithCenterAt:NSMakePoint(427.5, 289.5) radius:7.75 startAngle:43 endAngle:223];
+	[C4Shape stroke:0];
+	[C4Shape strokeWidth:0.75];
+	[C4Shape arcWithCenterAt:NSMakePoint(427.5, 289.5) radius:7 startAngle:43 endAngle:223];
+	
+	//TRIANGLE 
+	[C4Shape noStroke];
+	[C4Shape fill];
+	[C4Shape fillRed:0.4 green:0.54 blue:0.38];
+	[C4Shape quadFromX:423.5 Y:182.5 toX:452.5 Y:182.5 toX:411.5 Y:245.5 toX:406.5 Y:242.75];
+	[C4Shape fillRed:0.61 green:0.48 blue:0.24];
+	[C4Shape triangleFromX:319 Y:182.5 toX:423.5 Y:182.5 toX:406.5 Y:242.75];
+	
+	//ARCS
+	[C4Shape fill];
+	[C4Shape noStroke];
+	[C4Shape fillRed:0.85 green:0.345 blue:0.18];
+	[C4Shape arcWithCenterAt:NSMakePoint(430.5, 214.5) radius:24.86 startAngle:-56.5 endAngle:123.5];
+	[C4Shape fill:1 alpha:0.94];
+	[C4Shape arcWithCenterAt:NSMakePoint(430.5, 214.5) radius:21.86 startAngle:-56.5 endAngle:123.5];
+	[C4Shape fillRed:0.96 green:0.90 blue:0.51];
+	[C4Shape arcWithCenterAt:NSMakePoint(430.5, 214.5) radius:15.5 startAngle:-56.5 endAngle:123.5];
+	[C4Shape fill:1];
+	[C4Shape arcWithCenterAt:NSMakePoint(430.5, 214.5) radius:12.5 startAngle:-56.5 endAngle:123.5];
+	
+	[C4Shape fill:0];
+	[C4Shape arcWithCenterAt:NSMakePoint(430.5, 214.5) radius:6.5 startAngle:-56.5 endAngle:123.5];
+	[C4Shape stroke];
+	[C4Shape stroke:0];
+	[C4Shape fill:1];
+	[C4Shape arcWithCenterAt:NSMakePoint(430.5, 214.5) radius:6.5 startAngle:123.5 endAngle:-56.5];
+	
+	//TRIANGLE 
+	[C4Shape stroke];
+	[C4Shape stroke:0];
+	[C4Shape noFill];
+	[C4Shape triangleFromX:319 Y:182.5 toX:452.5 Y:182.5 toX:411.5 Y:245.5];
+	
+	//LINES
+	[C4Shape noFill];
+	[C4Shape beginShape];
+	[C4Shape vertexAt:NSMakePoint(108, 208.5)];
+	[C4Shape vertexAt:NSMakePoint(200.5, 305)];
+	[C4Shape vertexAt:NSMakePoint(365, 161)];
+	[C4Shape endShape];
+	
+	
+	[C4Shape noFill];
+	[C4Shape beginShape];
+	[C4Shape vertexAt:NSMakePoint(255.5, 40)];
+	[C4Shape vertexAt:NSMakePoint(359, 402.5)];
+	[C4Shape vertexAt:NSMakePoint(470, 20.5)];
+	[C4Shape endShape];
+	
+	[C4Shape lineFromX:340.5 Y:217 toX:430.5 Y:301.5];
+	[C4Shape lineFromX:63 Y:205 toX:276 Y:263.5];
+	[C4Shape lineFromX:176.5 Y:369.5 toX:250 Y:335];
+	[C4Shape lineFromX:183 Y:333 toX:222 Y:334];
+	[C4Shape lineFromX:187.5 Y:325.5 toX:223 Y:327];
+	[C4Shape lineFromX:200 Y:264 toX:199 Y:372.5];
+	[C4Shape lineFromX:189 Y:151 toX:367 Y:186];
+	[C4Shape lineFromX:182 Y:126 toX:348 Y:176];
+	[C4Shape lineFromX:156.5 Y:28 toX:264 Y:100];
+	[C4Shape lineFromX:174.5 Y:4 toX:250.5 Y:77];
+	[C4Shape lineFromX:245 Y:80 toX:300.5 Y:79];
+	[C4Shape lineFromX:246.5 Y:68.5 toX:302.5 Y:68];
+	[C4Shape lineFromX:302.5 Y:348 toX:408.5 Y:304.5];
+	[C4Shape lineFromX:301 Y:372.5 toX:399 Y:310.5];
+	[C4Shape lineFromX:415.5 Y:333.5 toX:415 Y:407.5];
+	[C4Shape lineFromX:418.5 Y:333.5 toX:418 Y:407.5];
+	[C4Shape lineFromX:408.5 Y:338 toX:425.5 Y:339];
+	[C4Shape lineFromX:408.5 Y:342 toX:425.5 Y:343];
+	[C4Shape lineFromX:323 Y:102 toX:570.5 Y:288];
+	[C4Shape lineFromX:407 Y:178 toX:515 Y:62];
+	[C4Shape lineFromX:406.5 Y:90 toX:502 Y:89];
+	[C4Shape lineFromX:436 Y:42.5 toX:508.5 Y:42.5];
+	[C4Shape lineFromX:406.5 Y:394.5 toX:426 Y:396];
+	[C4Shape lineFromX:406.5 Y:394.5 toX:426 Y:393];
+	[C4Shape lineFromX:199 Y:140 toX:516 Y:139];
+	
+}
+@end

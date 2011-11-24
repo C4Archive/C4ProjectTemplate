@@ -1,0 +1,39 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+int num;
+double c;
+
+@implementation C4Canvas 
+
+-(void)setup {
+[self drawStyle:DISPLAYRATE];
+[self windowWidth:400 andHeight:320];
+[C4Shape fill:1.0f];
+[C4Shape stroke:1.0f];
+num = 20;
+c = 0;
+}
+
+-(void)draw {
+[self background:0];
+c += .09;
+for(double i = 1; i < self.canvasHeight/num; i++){
+//cocoa cannot perform modulus division ( % ) with floats
+//e.g. 100%(5.2) won't work
+//since it works with only ints, so use fmodf() if you need
+//the following equation translates to (i%c)*i*i
+float x = fmodf(c,(float)i)*i*i; 
+[C4Shape lineFromX:0 Y:i*num toX:x Y:i*num];
+[C4Shape rectWithXPos:x yPos:i*num-num/2 width:8 andHeight:num];
+}
+}
+
+@end

@@ -1,0 +1,76 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+@interface C4Canvas () {}
+-(void)drawC:(NSPoint)startingPoint;
+-(void)drawFour:(NSPoint)startingPoint;
+-(void)drawSquare:(NSPoint)startingPoint;
+@end
+
+@implementation C4Canvas
+-(void)setup {
+[self drawStyle:DISPLAYRATE];
+[self windowWidth:400 andHeight:320];
+[C4Shape noStroke];
+}
+
+-(void)draw {
+[self background:0 alpha:0.066];
+[self drawC:mousePos];
+[self drawFour:mousePos];
+[self drawSquare:mousePos];
+}
+
+-(void)drawC:(NSPoint)startingPoint {
+[C4Shape fillRed:1.0f green:0.2f blue:0.2f];
+[C4Shape beginShape];
+[C4Shape vertexAtX:startingPoint.x+0 Y:startingPoint.y+0];
+[C4Shape vertexAtX:startingPoint.x+0 Y:startingPoint.y+160];
+[C4Shape vertexAtX:startingPoint.x+120 Y:startingPoint.y+160];
+[C4Shape vertexAtX:startingPoint.x+120 Y:startingPoint.y+120];
+[C4Shape vertexAtX:startingPoint.x+40 Y:startingPoint.y+120];
+[C4Shape vertexAtX:startingPoint.x+40 Y:startingPoint.y+40];
+[C4Shape vertexAtX:startingPoint.x+120 Y:startingPoint.y+40];
+[C4Shape vertexAtX:startingPoint.x+120 Y:startingPoint.y+0];
+[C4Shape endShape];
+}
+
+-(void)drawFour:(NSPoint)startingPoint {
+[C4Shape fillRed:0.2f green:0.4f blue:1.0f];
+[C4Shape beginShape];
+[C4Shape vertexAtX:startingPoint.x+160 Y:startingPoint.y+0];
+[C4Shape vertexAtX:startingPoint.x+160 Y:startingPoint.y+40];
+[C4Shape vertexAtX:startingPoint.x+80 Y:startingPoint.y+40];
+[C4Shape vertexAtX:startingPoint.x+80 Y:startingPoint.y+160];
+[C4Shape vertexAtX:startingPoint.x+120 Y:startingPoint.y+160];
+[C4Shape vertexAtX:startingPoint.x+120 Y:startingPoint.y+80];
+[C4Shape vertexAtX:startingPoint.x+160 Y:startingPoint.y+80];
+[C4Shape vertexAtX:startingPoint.x+160 Y:startingPoint.y+160];
+[C4Shape vertexAtX:startingPoint.x+200 Y:startingPoint.y+160];
+[C4Shape vertexAtX:startingPoint.x+200 Y:startingPoint.y+80];
+[C4Shape vertexAtX:startingPoint.x+240 Y:startingPoint.y+80];
+[C4Shape vertexAtX:startingPoint.x+240 Y:startingPoint.y+40];
+[C4Shape vertexAtX:startingPoint.x+200 Y:startingPoint.y+40];
+[C4Shape vertexAtX:startingPoint.x+200 Y:startingPoint.y+0];
+[C4Shape vertexAtX:startingPoint.x+160 Y:startingPoint.y+0];
+[C4Shape endShape];
+}
+
+-(void)drawSquare:(NSPoint)startingPoint {
+[C4Shape fillRed:0.3f green:0.3f blue:0.3f];
+[C4Shape beginShape];
+[C4Shape vertexAtX:startingPoint.x+120 Y:startingPoint.y+160];
+[C4Shape vertexAtX:startingPoint.x+120 Y:startingPoint.y+120];
+[C4Shape vertexAtX:startingPoint.x+80 Y:startingPoint.y+120];
+[C4Shape vertexAtX:startingPoint.x+80 Y:startingPoint.y+160];
+[C4Shape endShape];
+}
+
+@end

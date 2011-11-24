@@ -1,0 +1,25 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import <Cocoa/Cocoa.h>
+
+@implementation C4Canvas
+
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+C4Font *aFont = [C4Font fontWithName:@"Times" size:20];
+[C4String font:aFont];
+[C4String fill:1.0f];
+}
+
+-(void)draw {
+[self background:0];
+[[C4String stringWithString:@"Create and apply a font, using Times"] 
+drawAtPoint:NSMakePoint(20, self.centerPos.y)];
+}
+@end

@@ -1,0 +1,33 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+C4Image *backgroundImage;
+
+@implementation C4Canvas
+
+-(void)setup {
+[self drawStyle:EVENTBASED];
+[self windowWidth:400 andHeight:320];
+backgroundImage = [C4Image imageName:@"C4Wood.png"];
+[backgroundImage gaussianBlur:4];
+backgroundImage.imageMode = CENTER;
+}
+
+-(void)draw {
+backgroundImage.drawFilteredImage = NO;
+[backgroundImage drawAt:self.centerPos];
+
+/*
+Filtering creates a copy of an original image, and draws only the copy...
+*/
+backgroundImage.drawFilteredImage = YES;
+[backgroundImage drawAt:mousePos];
+}
+@end

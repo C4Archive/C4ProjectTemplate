@@ -1,0 +1,113 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+////////////////////////////////////////////////////////////////
+// The Particle object
+////////////////////////////////////////////////////////////////
+
+@interface Particle : C4Object {
+@private
+C4Vector *location, *velocity, *acceleration, *prevLocation;
+NSPoint target;
+float topSpeed;
+}
+-(void)setTarget:(NSNotification *)mouseMovedNotification;
+-(void)draw;
+@end
+
+@implementation Particle
+-(id)init {
+if(!(self = [super init])) {
+return nil;
+}
+
+location = [C4Vector vectorWithX:[C4Math randomInt:400]
+Y:[C4Math randomInt:320]
+Z:0];
+
+prevLocation = [C4Vector vectorWithX:0 Y:0 Z:0];
+
+velocity = [C4Vector vectorWithX:0 Y:0 Z:0];
+topSpeed = [C4Math randomInt:3]+3.0f;
+
+[self listenFor:MOUSEMOVED andRunMethod:@"setTarget:"];
+[self updateAutomaticallyUsingFrames:1];
+return self;
+}
+
+-(void)setTarget:(NSNotification *)mouseMovedNotification {
+target = [[[mouseMovedNotification userInfo] 
+objectForKey:@"mouseEvent"] locationInWindow];
+}
+
+-(void)update {
+
+[prevLocation setX:location.x Y:location.y Z:location.z];
+
+C4Vector *mouse = [C4Vector vectorWithX:target.x Y:target.y Z:0];
+C4Vector *dir = mouse;
+[dir subtract:location];
+[dir normalize];
+[dir multiplyScalar:-0.6];
+
+[acceleration release];
+acceleration = dir;
+
+[velocity add:acceleration];
+[velocity limit:topSpeed];
+
+[location add:velocity];
+
+if(location.x > 400) {
+location.x = 400;
+} else if (location.x < 0) {
+location.x = 0;
+}
+if(location.y > 320) {
+location.y = 320;
+} else if (location.y < 0) {
+location.y = 0;
+}
+}
+
+-(void)draw {
+[C4Shape ellipseWithXPos:location.x yPos:location.y width:6 andHeight:6];
+}
+@end
+
+////////////////////////////////////////////////////////////////
+// The Canvas
+////////////////////////////////////////////////////////////////
+
+NSMutableArray *particleArray;
+
+#import "C4Canvas.h"
+
+@implementation C4Canvas
+
+-(void)setup {
+[self drawStyle:DISPLAYRATE];
+[self windowWidth:400 andHeight:320];
+
+[C4Shape noStroke];
+[C4Shape fill:1.0f];
+
+particleArray = [[[NSMutableArray alloc] initWithCapacity:0] retain];
+
+for(int i = 0; i < 100; i++) {
+[particleArray addObject:[[Particle alloc] init]];
+}
+}
+
+-(void)draw {
+[self background:0 alpha:0.05];
+for(Particle *p in particleArray) {
+[p draw];
+}
+}
+@end

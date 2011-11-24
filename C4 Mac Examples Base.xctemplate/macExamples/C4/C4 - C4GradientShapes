@@ -1,0 +1,122 @@
+//
+//  C4Canvas.h
+//  CodeSamples
+//
+//	A Cocoa For Artists project
+//  Created by Travis Kirton
+//
+
+#import "C4Canvas.h"
+
+CGFloat unitDistance;
+
+@implementation C4Canvas
+
+-(void)setup {
+[self windowWidth:400 andHeight:320];
+[self drawStyle:EVENTBASED];
+unitDistance = 40;
+}
+
+-(void)draw {
+NSPoint start = NSZeroPoint;
+NSPoint end = start;
+end.y = self.canvasHeight;
+
+[C4Shape clearCurrentShape];
+[C4Shape addRectWithXPos:0 yPos:0 width:self.canvasWidth andHeight:self.canvasHeight];
+
+[C4Gradient linearGradientFromPointA:start
+toPointB:end
+usingColorA:[C4Color colorWithRed:1.0f green:1.0f blue:1.0f]
+andColorB:[C4Color colorWithRed:0.0f green:0.0f blue:0.0f]
+inShape:[C4Shape currentShape]];
+
+[C4Shape clearCurrentShape];
+
+NSPoint currentPoint = mousePos;
+NSPoint nextPoint = NSMakePoint(mousePos.x+3*unitDistance, mousePos.y+unitDistance);
+
+[C4Shape addLineFromPoint:currentPoint toPoint:nextPoint];
+
+nextPoint.y -= unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.x -= 3*unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.y += 4*unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.x += 3*unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.y -= 2*unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.x += unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.y += 2*unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.x += unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.y -= 2*unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.x += unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.y -= unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.x -= unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.y -= unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.x -= unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.y += unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.x -= 2*unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.y += 2*unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.x -= unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.y -= 2*unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+nextPoint.x += 2*unitDistance;
+[C4Shape addLineTo:nextPoint];
+
+[C4Gradient linearGradientFromPointA:start
+toPointB:end
+usingColorA:[C4Color colorWithRed:1.0f green:0.2f blue:0.2f]
+andColorB:[C4Color colorWithRed:0.2f green:0.4f blue:1.0f]
+inShape:[C4Shape currentShape]];
+
+[C4Shape noFill];
+[C4Shape stroke:1.0f alpha:0.2f];
+
+[C4Shape lineFromX:mousePos.x+2*unitDistance 
+Y:mousePos.y+4*unitDistance 
+toX:mousePos.x+2*unitDistance 
+Y:mousePos.y+3*unitDistance];
+
+[C4Shape lineFromX:mousePos.x+2*unitDistance 
+Y:mousePos.y+3*unitDistance 
+toX:mousePos.x+3*unitDistance 
+Y:mousePos.y+3*unitDistance];
+}
+
+@end
